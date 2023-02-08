@@ -14,8 +14,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  pull-requests: read
-  actions: write
 
 # Allow one concurrent deployment
 concurrency:
@@ -29,7 +27,6 @@ jobs:
     #   name: github-pages
     #   url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    permissions: read-all|write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -53,6 +50,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          publish_branch: main
 #       - name: Setup Pages
 #         uses: actions/configure-pages@v3
 #       - name: Upload artifact
