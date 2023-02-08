@@ -14,7 +14,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  pull-requests: read|write
+  pull-requests: read
   actions: write
 
 # Allow one concurrent deployment
@@ -29,6 +29,8 @@ jobs:
     #   name: github-pages
     #   url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
