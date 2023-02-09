@@ -4,9 +4,34 @@
   
   
   <entry>
+    <title>java-web-servlet-basic</title>
+    <link href="/2023/02/09/java-web-servlet-basic/"/>
+    <url>/2023/02/09/java-web-servlet-basic/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Java-Web-基础😀"><a href="#Java-Web-基础😀" class="headerlink" title="Java-Web-基础😀"></a>Java-Web-基础😀</h2><h3 id="部署Java程序到Tomcat"><a href="#部署Java程序到Tomcat" class="headerlink" title="部署Java程序到Tomcat"></a>部署Java程序到Tomcat</h3><h4 id="静态部署🎈"><a href="#静态部署🎈" class="headerlink" title="静态部署🎈"></a>静态部署🎈</h4><p>直接将编译后的项目文件夹或者war包放到webapps中</p><h4 id="动态部署🎈"><a href="#动态部署🎈" class="headerlink" title="动态部署🎈"></a>动态部署🎈</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">Context</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/test&quot;</span> <span class="hljs-attr">docBase</span>=<span class="hljs-string">&quot;project path&quot;</span> <span class="hljs-attr">reloadable</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure><ul><li>直接将这插入到server.xml中host节点中</li><li>%tomcat_home%&#x2F;conf&#x2F;enginename&#x2F;hostname&#x2F;，在这创建对应项目名的project-name.xml，并将上面内容拷贝到xml中(⚠️项目的上下文路径将以project-name为准，与Context节点的path无关)</li></ul><h3 id="Servlet请求匹配规则"><a href="#Servlet请求匹配规则" class="headerlink" title="Servlet请求匹配规则"></a>Servlet请求匹配规则</h3><p>采用最长匹配，如果没有找到匹配的则调用容器默认的servlet处理，没有配置默认的servlet，则发送HTTP404消息</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java-Web-基础</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
-    <link href="/2023/02/08/hello-world/"/>
-    <url>/2023/02/08/hello-world/</url>
+    <link href="/2023/02/09/hello-world/"/>
+    <url>/2023/02/09/hello-world/</url>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
