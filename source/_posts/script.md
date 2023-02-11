@@ -29,7 +29,7 @@ script.async = false
 document.head.appendChild(script)
 ```
 
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; difference &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; async &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; defer &nbsp;&nbsp;&nbsp; |
+| difference | async | defer |
 | :----------------------------------------------------------: | :-----------------------------------------: | :-----------------------------------------: |
 |                      block page loading                      |                     no                      |                     no                      |
 |                   execute by insert order                    |                     no                      |                     yes                     |
