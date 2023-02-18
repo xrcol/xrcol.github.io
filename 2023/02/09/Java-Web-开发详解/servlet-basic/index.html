@@ -24,7 +24,7 @@
 <meta property="og:description" content="Java-Web-基础😀部署Java程序到Tomcat静态部署🎈直接将编译后的项目文件夹或者war包放到webapps中 动态部署🎈1&lt;Context path&#x3D;&quot;&#x2F;test&quot; docBase&#x3D;&quot;project path&quot; reloadable&#x3D;&quot;true&quot; &#x2F;&gt;   直接将这插入到server.xml中host节点中">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-09T21:49:34.000Z">
-<meta property="article:modified_time" content="2023-02-18T09:25:35.691Z">
+<meta property="article:modified_time" content="2023-02-18T11:56:52.012Z">
 <meta property="article:author" content="XR">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          410 words
+          1.3k words
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          4 mins
+          12 mins
         
       </span>
     
@@ -282,6 +282,27 @@
 <li>%tomcat_home%&#x2F;conf&#x2F;enginename&#x2F;hostname&#x2F;，在这创建对应项目名的project-name.xml，并将上面内容拷贝到xml中(⚠️项目的上下文路径将以project-name为准，与Context节点的path无关)</li>
 </ul>
 <h3 id="Servlet请求匹配规则"><a href="#Servlet请求匹配规则" class="headerlink" title="Servlet请求匹配规则"></a>Servlet请求匹配规则</h3><p>采用最长匹配，如果没有找到匹配的则调用容器默认的servlet处理，没有配置默认的servlet，则发送HTTP404消息</p>
+<h3 id="线程安全的Servlet"><a href="#线程安全的Servlet" class="headerlink" title="线程安全的Servlet"></a>线程安全的Servlet</h3><p>默认情况下，servlet是多线程的，即一个servlet实例在多个线程中同时执行，并发地处理多个客户端请求</p>
+<center>多线程的servlet执行模型</center>
+<pre><code class=" mermaid">flowchart LR
+    subgraph se [servlet容器]
+        direction LR
+        sq[调度者线程]--&gt; ci((工作者线程池))
+        ci--&quot;service()&quot;--&gt; ro1(ServletA的实例)
+        ci--&quot;service()&quot;--&gt; ro2(ServletB的实例)
+        ci--&quot;service()&quot;--&gt; ro3(ServletC的实例)
+    end
+    客户端请求 --&gt; se
+</code></pre>
+
+<h4 id="变量的线程安全"><a href="#变量的线程安全" class="headerlink" title="变量的线程安全"></a>变量的线程安全</h4><p>对于实例变量的访问，需要考虑并发的情况，同时对于connection在close()后，将其设置为null，避免在Connection Closed Exception</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> TestServlet <span class="hljs-keyword">extends</span> <span class="hljs-title class_">HttpServlet</span> &#123;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">service</span><span class="hljs-params">(req, res)</span> &#123;<br>        <span class="hljs-type">Connection</span> <span class="hljs-variable">conn</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            conn = ds.getConnection();<br>            conn.close();<br>            conn = <span class="hljs-literal">null</span>; <span class="hljs-comment">// 确保不会关闭两次,避免并发时出现问题</span><br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            <span class="hljs-keyword">if</span> (conn != <span class="hljs-literal">null</span>) &#123;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    conn.close();<br>                &#125; <span class="hljs-keyword">catch</span>(Exception e) &#123;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h4 id="属性的线程安全"><a href="#属性的线程安全" class="headerlink" title="属性的线程安全"></a>属性的线程安全</h4><ul>
+<li>ServletContext: 可以被Web应用程序中所有servlet访问，线程不安全</li>
+<li>HttpSession: 同属于一个进程的浏览器窗口，这些窗口的访问请求，属于同一个session，为了处理这些请求，Servlet容器会创建多个线程处理，线程不安全</li>
+<li>ServletRequest: Servlet对于接受到的每一个请求，都会创建一个新的ServletRequest对象，只能一个线程能访问当前的request，线程安全</li>
+</ul>
 
                 
               </div>
