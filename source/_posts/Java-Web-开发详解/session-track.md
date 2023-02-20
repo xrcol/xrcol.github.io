@@ -36,6 +36,15 @@ response.addCookie(cookie);
 Cookie[] cookies = request.getCookies();
 ```
 
+#### 配置session默认超时时间
+
+```xml
+<!-- 在tomcat中的web.xml配置 -->
+<session-config>
+    <session-timeout></session-timeout>
+</session-config>
+```
+
 ### HttpSessionBindingListener
 
 当一个对象实现了HttpSessionBindingListener接口，当这个对象被绑定到Session中或者从Session中删除时，Servlet容器会通知这个对象，对象收到通知后，可以做一些其它的操作（在线人数统计）
