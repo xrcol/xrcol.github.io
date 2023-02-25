@@ -1,5 +1,5 @@
 ---
-title: script
+title: script加载
 date: 2023-02-07 20:27:24
 tags: JavaScript
 categories: JavaScript高级程序设计
