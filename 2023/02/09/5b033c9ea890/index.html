@@ -24,7 +24,7 @@
 <meta property="og:description" content="Java-Web-基础😀部署Java程序到Tomcat静态部署🎈直接将编译后的项目文件夹或者war包放到webapps中 动态部署🎈1&lt;Context path&#x3D;&quot;&#x2F;test&quot; docBase&#x3D;&quot;project path&quot; reloadable&#x3D;&quot;true&quot; &#x2F;&gt;   直接将这插入到server.xml中host节点中">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-09T21:49:34.000Z">
-<meta property="article:modified_time" content="2023-02-26T04:40:42.710Z">
+<meta property="article:modified_time" content="2023-03-04T04:29:39.581Z">
 <meta property="article:author" content="XR">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          1.8k words
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          12 mins
+          15 mins
         
       </span>
     
@@ -302,6 +302,18 @@
 <li>ServletContext: 可以被Web应用程序中所有servlet访问，线程不安全</li>
 <li>HttpSession: 同属于一个进程的浏览器窗口，这些窗口的访问请求，属于同一个session，为了处理这些请求，Servlet容器会创建多个线程处理，线程不安全</li>
 <li>ServletRequest: Servlet对于接受到的每一个请求，都会创建一个新的ServletRequest对象，只能一个线程能访问当前的request，线程安全</li>
+</ul>
+<h4 id="RequestDispatcher"><a href="#RequestDispatcher" class="headerlink" title="RequestDispatcher"></a>RequestDispatcher</h4><ul>
+<li>调用servletcontext的getRequestDispatcher方法，传入的路径参数必须以斜杠(&#x2F;)开始，表示相对于上下文的路径</li>
+<li>调用request的getRequestDispatcher方法，传入的路径参数没有以斜杠(&#x2F;)开始，表示相对于当前servlet的路径</li>
+</ul>
+<h5 id="forward和include区别"><a href="#forward和include区别" class="headerlink" title="forward和include区别"></a>forward和include区别</h5><ul>
+<li>forward表示将执行的控制权转交给其它资源处理，其执行后，位于后面的代码不再被执行</li>
+<li>include表示将执行的控制权暂时转交给其它资源处理，同时其它资源作出的响应将并入原先的响应对象，原先的servlet的代码仍可继续执行，可继续输出响应信息</li>
+</ul>
+<h5 id="forward和sendRedirect区别"><a href="#forward和sendRedirect区别" class="headerlink" title="forward和sendRedirect区别"></a>forward和sendRedirect区别</h5><ul>
+<li>forward: 在后台请求另外的资源去处理请求，对于浏览器来说不可见，同时浏览器的地址栏不会改变</li>
+<li>sendRedirect: 将对于其它资源的请求，再次转发给浏览器，由浏览器去请求其它的资源处理，浏览器的地址栏会发生改变</li>
 </ul>
 
                 
