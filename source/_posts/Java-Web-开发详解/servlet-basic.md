@@ -74,3 +74,18 @@ public TestServlet extends HttpServlet {
 - ServletContext: 可以被Web应用程序中所有servlet访问，线程不安全
 - HttpSession: 同属于一个进程的浏览器窗口，这些窗口的访问请求，属于同一个session，为了处理这些请求，Servlet容器会创建多个线程处理，线程不安全
 - ServletRequest: Servlet对于接受到的每一个请求，都会创建一个新的ServletRequest对象，只能一个线程能访问当前的request，线程安全
+
+#### RequestDispatcher
+
+- 调用servletcontext的getRequestDispatcher方法，传入的路径参数必须以斜杠(/)开始，表示相对于上下文的路径
+- 调用request的getRequestDispatcher方法，传入的路径参数没有以斜杠(/)开始，表示相对于当前servlet的路径
+
+##### forward和include区别
+
+- forward表示将执行的控制权转交给其它资源处理，其执行后，位于后面的代码不再被执行
+- include表示将执行的控制权暂时转交给其它资源处理，同时其它资源作出的响应将并入原先的响应对象，原先的servlet的代码仍可继续执行，可继续输出响应信息
+
+##### forward和sendRedirect区别
+
+- forward: 在后台请求另外的资源去处理请求，对于浏览器来说不可见，同时浏览器的地址栏不会改变
+- sendRedirect: 将对于其它资源的请求，再次转发给浏览器，由浏览器去请求其它的资源处理，浏览器的地址栏会发生改变
