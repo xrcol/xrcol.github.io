@@ -16,21 +16,22 @@
   <meta name="author" content="XR">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="✨代理与反射✨代理基础基础用法123456const target &#x3D; &amp;#123;    id: &amp;#x27;target&amp;#x27;&amp;#125;const proxy &#x3D; new Proxy(target, &amp;#123;&amp;#125;)console.log(target.id) &#x2F;&#x2F; targetconsole.log(proxy.id) &#x2F;&#x2F; target  捕获器12345678const">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://xrcol.github.io/2023/03/04/b4a7340b06ef/index.html">
+<meta property="og:title" content="代理与反射">
+<meta property="og:url" content="http://xrcol.github.io/2023/03/05/9c826a143b54/index.html">
 <meta property="og:site_name" content="XR&#39;Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="✨代理与反射✨代理基础基础用法123456const target &#x3D; &amp;#123;    id: &amp;#x27;target&amp;#x27;&amp;#125;const proxy &#x3D; new Proxy(target, &amp;#123;&amp;#125;)console.log(target.id) &#x2F;&#x2F; targetconsole.log(proxy.id) &#x2F;&#x2F; target  捕获器12345678const">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-04T04:29:39.585Z">
-<meta property="article:modified_time" content="2023-03-04T04:29:39.585Z">
+<meta property="article:published_time" content="2023-03-05T21:58:00.000Z">
+<meta property="article:modified_time" content="2023-03-05T14:01:29.994Z">
 <meta property="article:author" content="XR">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - XR&#39;Blog</title>
+  <title>代理与反射 - XR&#39;Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="代理与反射"></span>
           
         </div>
 
@@ -207,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-04 04:29" pubdate>
-          March 4, 2023 am
+        <time datetime="2023-03-05 21:58" pubdate>
+          March 5, 2023 pm
         </time>
       </span>
     
@@ -219,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          367 words
+          1.8k words
         
       </span>
     
@@ -230,7 +231,7 @@
         
         
         
-          4 mins
+          16 mins
         
       </span>
     
@@ -268,24 +269,37 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">代理与反射</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+                <h2 id="✨代理与反射✨"><a href="#✨代理与反射✨" class="headerlink" title="✨代理与反射✨"></a>✨代理与反射✨</h2><h3 id="代理基础"><a href="#代理基础" class="headerlink" title="代理基础"></a>代理基础</h3><h4 id="基础用法"><a href="#基础用法" class="headerlink" title="基础用法"></a>基础用法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> target = &#123;<br>    <span class="hljs-attr">id</span>: <span class="hljs-string">&#x27;target&#x27;</span><br>&#125;<br><span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(target, &#123;&#125;)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(target.<span class="hljs-property">id</span>) <span class="hljs-comment">// target</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">id</span>) <span class="hljs-comment">// target</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<h4 id="捕获器"><a href="#捕获器" class="headerlink" title="捕获器"></a>捕获器</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> target = &#123;<br>    <span class="hljs-attr">foo</span>: <span class="hljs-string">&#x27;bar&#x27;</span><br>&#125;<br><span class="hljs-keyword">const</span> handler = &#123;<br>    <span class="hljs-title function_">get</span>(<span class="hljs-params">target, property, receiver</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">get</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<h4 id="可撤销的代理"><a href="#可撤销的代理" class="headerlink" title="可撤销的代理"></a>可撤销的代理</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> target = &#123;<br>    <span class="hljs-attr">foo</span>: <span class="hljs-string">&#x27;bar&#x27;</span><br>&#125;<br><span class="hljs-keyword">const</span> handler = &#123;<br>    <span class="hljs-title function_">get</span>(<span class="hljs-params">target, property, receiver</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;intercepted&#x27;</span><br>    &#125;<br>&#125;<br><span class="hljs-keyword">const</span> &#123; proxy, revoke &#125; = <span class="hljs-title class_">Proxy</span>.<span class="hljs-title function_">revocable</span>(target, handler)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">foo</span>) <span class="hljs-comment">// intercepted</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(target.<span class="hljs-property">foo</span>) <span class="hljs-comment">// bar</span><br><span class="hljs-title function_">revoke</span>()<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(proxy.<span class="hljs-property">foo</span>) <span class="hljs-comment">// TypeError</span><br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<h4 id="代理的不足"><a href="#代理的不足" class="headerlink" title="代理的不足"></a>代理的不足</h4><ul>
+<li><p>代理中的this</p>
+</li>
+<li><p>代理与内部槽位，比如Date类型，Date类型方法的执行依赖this值上的内部槽位，由于代理对象上不存在内部槽位，导致代理拦截后转发给目标对象的方法抛出TypeError</p>
+</li>
+</ul>
+<h3 id="可代理的方法"><a href="#可代理的方法" class="headerlink" title="可代理的方法"></a>可代理的方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> target = &#123;&#125;<br><span class="hljs-keyword">const</span> proxy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(target, &#123;<br>    <span class="hljs-title function_">get</span>(<span class="hljs-params">target, property, receiver</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">get</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">set</span>(<span class="hljs-params">target, property, value, receiver</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">set</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">has</span>(<span class="hljs-params">target, property</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">has</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">defineProperty</span>(<span class="hljs-params">target, property, descriptor</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">defineProperty</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">getOwnPropertyDescriptor</span>(<span class="hljs-params">target, property</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">getOwnPropertyDescriptor</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">deleteProperty</span>(<span class="hljs-params">target, property</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">deleteProperty</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">ownKeys</span>(<span class="hljs-params">target</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">ownKeys</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">getPrototypeOf</span>(<span class="hljs-params">target</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">getPrototypeOf</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">setPrototypeOf</span>(<span class="hljs-params">target, prototype</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">setPrototypeOf</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">apply</span>(<span class="hljs-params">target, thisArg, ...argumentsList</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">apply</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;,<br>    <span class="hljs-title function_">construct</span>(<span class="hljs-params">target, argumentsList, newTarget</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">construct</span>(...<span class="hljs-variable language_">arguments</span>)<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><ul>
+<li><p>跟踪属性的访问</p>
+</li>
+<li><p>隐藏属性</p>
+</li>
+<li><p>属性验证</p>
+</li>
+<li><p>函数与构造函数参数验证</p>
+</li>
+<li><p>数据绑定和可观察对象</p>
+</li>
+</ul>
 
                 
               </div>
@@ -294,6 +308,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="category-chain-item">JavaScript高级程序设计</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/JavaScript/">#JavaScript</a>
+      
+    </div>
   
 </div>
 
@@ -303,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>http://xrcol.github.io/2023/03/04/b4a7340b06ef/</div>
+      <div>代理与反射</div>
+      <div>http://xrcol.github.io/2023/03/05/9c826a143b54/</div>
     </div>
     <div class="license-meta">
       
@@ -316,7 +358,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 4, 2023</div>
+          <div>March 5, 2023</div>
         </div>
       
       
@@ -352,8 +394,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/26/86edf4799d63/" title="对象、类和面向对象编程">
-                        <span class="hidden-mobile">对象、类和面向对象编程</span>
+                      <a href="/2023/03/05/f944ca208866/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
