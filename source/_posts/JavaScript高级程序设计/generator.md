@@ -188,3 +188,48 @@ console.log(g.next()) // { done: false, value: 3 }
 ```
 
 ### generator/yield实现async/await
+
+```javascript
+function _aync(fn) {
+    const context = this
+    return new Promise((resolve, reject) => {
+        if (typeof fn === 'function') fn = fn.call(this)
+        if (!fn || typeof fn.next !=== 'function') return resolve(fn)
+        
+        onFullFilled()
+        
+        function onFullFilled(ret) {
+            let val
+            try {
+                val = fn.next(ret)
+            } catch(e) {
+                reject(e)
+            }
+            next(val)
+        }
+        
+        function onRejected(err) {
+            let val
+            try {
+                val = fn.throw(err)
+            } catch(e) {
+                reject(e)
+            }
+            next(val)
+        }
+        
+        function next(ret) {
+            if (ret.done) return resolve(ret.value)
+            let value = ret.value
+            if (!isPromised(value)) {
+                value = Promise.resolve(value)
+            }
+            return value.then(onFullFilled, onRejected)
+        }
+        function isPromised(obj) {
+            Object.prototype.toString.call(obj) === '[object Promise]'
+        }
+    })
+}
+```
+
