@@ -151,4 +151,3 @@ const ProxyTest = new Proxy(Test, {
 
 export default ProxyTest
 ```
-
