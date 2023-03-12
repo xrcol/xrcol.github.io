@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>对象与类</title>
+    <link href="/2023/03/12/e42ac6b89405/"/>
+    <url>/2023/03/12/e42ac6b89405/</url>
+    
+    <content type="html"><![CDATA[<h2 id="对象与类"><a href="#对象与类" class="headerlink" title="对象与类"></a>对象与类</h2><h3 id="面向对象程序设计概述"><a href="#面向对象程序设计概述" class="headerlink" title="面向对象程序设计概述"></a>面向对象程序设计概述</h3><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>使用OOP，需要弄清除对象的三个主要特性</p><ul><li>对象的行为 —- 可以对对象施加哪些操作、哪些方法</li><li>对象的状态 —- 施加那些方法时，对象如何响应</li><li>对象标识 —- 如何辨别具有相同行为与状态的不同对象</li></ul><h4 id="类之间的关系"><a href="#类之间的关系" class="headerlink" title="类之间的关系"></a>类之间的关系</h4><ul><li>依赖（”uses-a”）</li><li>聚合（”has-a”）</li><li>继承（”is-a”）</li></ul><p><img src="/2023/03/12/e42ac6b89405/uml-symbol.png" alt="类关系的UML符号"></p><h3 id="方法参数"><a href="#方法参数" class="headerlink" title="方法参数"></a>方法参数</h3><p>Java程序设计语言总是采用按值调用的方式，方法得到的是所有参数值的拷贝</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java核心技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Java的基本程序设计结构</title>
     <link href="/2023/03/11/89f580576515/"/>
     <url>/2023/03/11/89f580576515/</url>
