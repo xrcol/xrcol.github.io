@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>异常、断言和日志</title>
+    <link href="/2023/03/19/69efd1704bf5/"/>
+    <url>/2023/03/19/69efd1704bf5/</url>
+    
+    <content type="html"><![CDATA[<h2 id="异常、断言和日志"><a href="#异常、断言和日志" class="headerlink" title="异常、断言和日志"></a>异常、断言和日志</h2><h3 id="处理错误"><a href="#处理错误" class="headerlink" title="处理错误"></a>处理错误</h3><h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4><center>Java中的异常层次结构</center><pre><code class=" mermaid">classDiagram    Throwable &lt;|-- Error    Throwable &lt;|-- Exception    Exception &lt;|-- IOException    Exception &lt;|-- RuntimeException    class Error    class Exception    class IOException    class RuntimeException</code></pre><h4 id="创建异常类"><a href="#创建异常类" class="headerlink" title="创建异常类"></a>创建异常类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FileFormatException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IOException</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">FileFormatException</span><span class="hljs-params">()</span> &#123;&#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">FileFormatException</span><span class="hljs-params">(String gripe)</span> &#123;<br>        <span class="hljs-built_in">super</span>(gripe)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h3><h4 id="捕获多个异常"><a href="#捕获多个异常" class="headerlink" title="捕获多个异常"></a>捕获多个异常</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (FileNotFoundException | UnknownHostException e) &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure><h4 id="再次抛出异常与异常链"><a href="#再次抛出异常与异常链" class="headerlink" title="再次抛出异常与异常链"></a>再次抛出异常与异常链</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>    <span class="hljs-type">Throwable</span> <span class="hljs-variable">se</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServletException</span>(<span class="hljs-string">&quot;datebase error&quot;</span>);<br>    se.initCause(e);<br>    <span class="hljs-keyword">throw</span> se;<br>&#125;<br></code></pre></td></tr></table></figure><h4 id="带资源的try语句"><a href="#带资源的try语句" class="headerlink" title="带资源的try语句"></a>带资源的try语句</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> (<span class="hljs-type">Resource</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> ...) &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure><p>在try块退出时，会自动调用res.close方法。还可以自定义实现AutoCloseable接口的类，来实现带资源的try语句</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java核心技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>接口、lambda表达式和内部类</title>
     <link href="/2023/03/18/49da83869ffd/"/>
     <url>/2023/03/18/49da83869ffd/</url>

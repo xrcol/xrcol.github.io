@@ -16,24 +16,22 @@
   <meta name="author" content="XR">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Script加载异步加载1&lt;script async src&#x3D;&amp;#x27;test.js&amp;#x27;&gt;&lt;&#x2F;script&gt;  延迟加载1&lt;script defer src&#x3D;&amp;#x27;test.js&amp;#x27;&gt;&lt;&#x2F;script&gt;  同步加载12345&#x2F;&#x2F; 设置async为false来实现同步加载let script &#x3D; document.create">
+    <meta name="description" content="异常、断言和日志处理错误异常分类Java中的异常层次结构  classDiagram     Throwable &lt;|-- Error     Throwable &lt;|-- Exception     Exception &lt;|-- IOException     Exception &lt;|-- RuntimeException     class Error     clas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="script加载">
-<meta property="og:url" content="http://xrcol.github.io/2023/02/07/77efc5566626/index.html">
+<meta property="og:title" content="异常、断言和日志">
+<meta property="og:url" content="http://xrcol.github.io/2023/03/19/69efd1704bf5/index.html">
 <meta property="og:site_name" content="XR&#39;Blog">
-<meta property="og:description" content="Script加载异步加载1&lt;script async src&#x3D;&amp;#x27;test.js&amp;#x27;&gt;&lt;&#x2F;script&gt;  延迟加载1&lt;script defer src&#x3D;&amp;#x27;test.js&amp;#x27;&gt;&lt;&#x2F;script&gt;  同步加载12345&#x2F;&#x2F; 设置async为false来实现同步加载let script &#x3D; document.create">
+<meta property="og:description" content="异常、断言和日志处理错误异常分类Java中的异常层次结构  classDiagram     Throwable &lt;|-- Error     Throwable &lt;|-- Exception     Exception &lt;|-- IOException     Exception &lt;|-- RuntimeException     class Error     clas">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://html.spec.whatwg.org/images/asyncdefer.svg">
-<meta property="article:published_time" content="2023-02-07T20:27:24.000Z">
+<meta property="article:published_time" content="2023-03-19T16:01:00.000Z">
 <meta property="article:modified_time" content="2023-03-19T08:06:21.485Z">
 <meta property="article:author" content="XR">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://html.spec.whatwg.org/images/asyncdefer.svg">
   
   
   
-  <title>script加载 - XR&#39;Blog</title>
+  <title>异常、断言和日志 - XR&#39;Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="script加载"></span>
+            <span id="subtitle" data-typed-text="异常、断言和日志"></span>
           
         </div>
 
@@ -210,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-02-07 20:27" pubdate>
-          February 7, 2023 pm
+        <time datetime="2023-03-19 16:01" pubdate>
+          March 19, 2023 pm
         </time>
       </span>
     
@@ -222,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          705 words
+          752 words
         
       </span>
     
@@ -233,7 +231,7 @@
         
         
         
-          6 mins
+          7 mins
         
       </span>
     
@@ -271,48 +269,33 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">script加载</h1>
+            <h1 style="display: none">异常、断言和日志</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Script加载"><a href="#Script加载" class="headerlink" title="Script加载"></a>Script加载</h2><h3 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script <span class="hljs-keyword">async</span> src=<span class="hljs-string">&#x27;test.js&#x27;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+                <h2 id="异常、断言和日志"><a href="#异常、断言和日志" class="headerlink" title="异常、断言和日志"></a>异常、断言和日志</h2><h3 id="处理错误"><a href="#处理错误" class="headerlink" title="处理错误"></a>处理错误</h3><h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4><center>Java中的异常层次结构</center>
 
-<h3 id="延迟加载"><a href="#延迟加载" class="headerlink" title="延迟加载"></a>延迟加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script defer src=<span class="hljs-string">&#x27;test.js&#x27;</span>&gt;&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<pre><code class=" mermaid">classDiagram
+    Throwable &lt;|-- Error
+    Throwable &lt;|-- Exception
+    Exception &lt;|-- IOException
+    Exception &lt;|-- RuntimeException
+    class Error
+    class Exception
+    class IOException
+    class RuntimeException
+</code></pre>
 
-<h3 id="同步加载"><a href="#同步加载" class="headerlink" title="同步加载"></a>同步加载</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 设置async为false来实现同步加载</span><br><span class="hljs-keyword">let</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>)<br>script.<span class="hljs-property">src</span> = <span class="hljs-string">&#x27;test.js&#x27;</span><br>script.<span class="hljs-property">async</span> = <span class="hljs-literal">false</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-property">head</span>.<span class="hljs-title function_">appendChild</span>(script)<br></code></pre></td></tr></table></figure>
+<h4 id="创建异常类"><a href="#创建异常类" class="headerlink" title="创建异常类"></a>创建异常类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FileFormatException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IOException</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">FileFormatException</span><span class="hljs-params">()</span> &#123;&#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">FileFormatException</span><span class="hljs-params">(String gripe)</span> &#123;<br>        <span class="hljs-built_in">super</span>(gripe)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<table>
-<thead>
-<tr>
-<th align="center">difference</th>
-<th align="center">async</th>
-<th align="center">defer</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">block page loading</td>
-<td align="center">no</td>
-<td align="center">no</td>
-</tr>
-<tr>
-<td align="center">execute by insert order</td>
-<td align="center">no</td>
-<td align="center">yes</td>
-</tr>
-<tr>
-<td align="center">rely on the DOM</td>
-<td align="center">no</td>
-<td align="center">yes</td>
-</tr>
-</tbody></table>
-<p> <img src="https://html.spec.whatwg.org/images/asyncdefer.svg" srcset="/img/loading.gif" lazyload alt="script"></p>
-<h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p><strong>async</strong>下载完后立即执行，适用于要尽可能快的执行脚本</p>
-<p><strong>defer</strong>下载完后也需要等到文档解析完执行，适用于脚本中需要操作DOM</p>
-<h3 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h3><p>不会执行，只是下载和缓存</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;link rel=<span class="hljs-string">&#x27;preload&#x27;</span> href=<span class="hljs-string">&#x27;test.js&#x27;</span> <span class="hljs-keyword">as</span>=<span class="hljs-string">&#x27;script&#x27;</span> /&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&#x27;preload&#x27;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&#x27;test.css&#x27;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&#x27;stylesheet&#x27;</span> /&gt;</span></span><br></code></pre></td></tr></table></figure>
+<h3 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h3><h4 id="捕获多个异常"><a href="#捕获多个异常" class="headerlink" title="捕获多个异常"></a>捕获多个异常</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (FileNotFoundException | UnknownHostException e) &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>[1] <a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/scripting.html#attr-script-defer/">https://html.spec.whatwg.org/multipage/scripting.html#attr-script-defer/</a></p>
+<h4 id="再次抛出异常与异常链"><a href="#再次抛出异常与异常链" class="headerlink" title="再次抛出异常与异常链"></a>再次抛出异常与异常链</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>    <span class="hljs-type">Throwable</span> <span class="hljs-variable">se</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServletException</span>(<span class="hljs-string">&quot;datebase error&quot;</span>);<br>    se.initCause(e);<br>    <span class="hljs-keyword">throw</span> se;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="带资源的try语句"><a href="#带资源的try语句" class="headerlink" title="带资源的try语句"></a>带资源的try语句</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> (<span class="hljs-type">Resource</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> ...) &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在try块退出时，会自动调用res.close方法。还可以自定义实现AutoCloseable接口的类，来实现带资源的try语句</p>
 
                 
               </div>
@@ -331,7 +314,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="category-chain-item">JavaScript高级程序设计</a>
+  <a href="/categories/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/" class="category-chain-item">Java核心技术</a>
   
   
 
@@ -346,7 +329,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/JavaScript/">#JavaScript</a>
+        <a href="/tags/Java/">#Java</a>
       
     </div>
   
@@ -358,8 +341,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>script加载</div>
-      <div>http://xrcol.github.io/2023/02/07/77efc5566626/</div>
+      <div>异常、断言和日志</div>
+      <div>http://xrcol.github.io/2023/03/19/69efd1704bf5/</div>
     </div>
     <div class="license-meta">
       
@@ -371,7 +354,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>February 7, 2023</div>
+          <div>March 19, 2023</div>
         </div>
       
       
@@ -403,15 +386,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/07/3063711778d7/" title="JavaScript中的变量提升">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaScript中的变量提升</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2023/03/18/49da83869ffd/" title="接口、lambda表达式和内部类">
+                        <span class="hidden-mobile">接口、lambda表达式和内部类</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -466,6 +449,19 @@
 
   
 
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('mermaid' in window) {
+        mermaid.init();
+      }
+    });
+  });
+</script>
 
 
 
