@@ -16,22 +16,22 @@
   <meta name="author" content="XR">
   <meta name="keywords" content="">
   
-    <meta name="description" content="继承类、超类和子类子类构造器如果子类的构造器没有显示地调用超类的构造器，则将自动调用超类默认（没有参数）的构造器 多态静态绑定：private方法、static方法、final方法或者构造器，编译器可以准确知道调用哪个方法 动态绑定：调用的方法依赖于隐式参数的实际类型，调用方法时需要进行搜索，时间开销比较大 阻止继承定义类或方法时，使用final，来阻止类被继承，阻止方法被覆盖 访问修饰符   p">
+    <meta name="description" content="泛型程序设计泛型类1234567891011public class Pair&lt;T&gt; &amp;#123;    private T first;    private T second;    public T getFrist() &amp;#123;        return first;    &amp;#125;    public setFrist(T newValue) &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="继承">
-<meta property="og:url" content="http://xrcol.github.io/2023/03/15/f90616b0a613/index.html">
+<meta property="og:title" content="泛型程序设计">
+<meta property="og:url" content="http://xrcol.github.io/2023/03/26/9cadd44316d9/index.html">
 <meta property="og:site_name" content="XR&#39;Blog">
-<meta property="og:description" content="继承类、超类和子类子类构造器如果子类的构造器没有显示地调用超类的构造器，则将自动调用超类默认（没有参数）的构造器 多态静态绑定：private方法、static方法、final方法或者构造器，编译器可以准确知道调用哪个方法 动态绑定：调用的方法依赖于隐式参数的实际类型，调用方法时需要进行搜索，时间开销比较大 阻止继承定义类或方法时，使用final，来阻止类被继承，阻止方法被覆盖 访问修饰符   p">
+<meta property="og:description" content="泛型程序设计泛型类1234567891011public class Pair&lt;T&gt; &amp;#123;    private T first;    private T second;    public T getFrist() &amp;#123;        return first;    &amp;#125;    public setFrist(T newValue) &amp;#123;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-03-15T22:41:00.000Z">
-<meta property="article:modified_time" content="2023-03-26T07:40:01.065Z">
+<meta property="article:published_time" content="2023-03-26T15:36:00.000Z">
+<meta property="article:modified_time" content="2023-03-26T07:40:01.069Z">
 <meta property="article:author" content="XR">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>继承 - XR&#39;Blog</title>
+  <title>泛型程序设计 - XR&#39;Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="继承"></span>
+            <span id="subtitle" data-typed-text="泛型程序设计"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-15 22:41" pubdate>
-          March 15, 2023 pm
+        <time datetime="2023-03-26 15:36" pubdate>
+          March 26, 2023 pm
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k words
+          1.2k words
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          19 mins
+          10 mins
         
       </span>
     
@@ -269,42 +269,32 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">继承</h1>
+            <h1 style="display: none">泛型程序设计</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="类、超类和子类"><a href="#类、超类和子类" class="headerlink" title="类、超类和子类"></a>类、超类和子类</h3><h4 id="子类构造器"><a href="#子类构造器" class="headerlink" title="子类构造器"></a>子类构造器</h4><p>如果子类的构造器没有显示地调用超类的构造器，则将自动调用超类默认（没有参数）的构造器</p>
-<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>静态绑定：private方法、static方法、final方法或者构造器，编译器可以准确知道调用哪个方法</p>
-<p>动态绑定：调用的方法依赖于隐式参数的实际类型，调用方法时需要进行搜索，时间开销比较大</p>
-<h4 id="阻止继承"><a href="#阻止继承" class="headerlink" title="阻止继承"></a>阻止继承</h4><p>定义类或方法时，使用final，来阻止类被继承，阻止方法被覆盖</p>
-<h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><table>
-<thead>
-<tr>
-<th align="center">private</th>
-<th align="center">public</th>
-<th align="center">protected</th>
-<th align="center">默认</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">仅对本类可见</td>
-<td align="center">对所有类可见</td>
-<td align="center">对本包和所有子类可见</td>
-<td align="center">对本包可见</td>
-</tr>
-</tbody></table>
-<h4 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Employee otherObject)</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span> == otherObject) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">if</span> (otherObject == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span> (getClass() != otherObject.getClass()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-type">Employee</span> <span class="hljs-variable">other</span> <span class="hljs-operator">=</span> (Employee) otherObject;<br>        <span class="hljs-keyword">return</span> Objects.equals(field, other.field);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="泛型程序设计"><a href="#泛型程序设计" class="headerlink" title="泛型程序设计"></a>泛型程序设计</h2><h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Pair</span>&lt;T&gt; &#123;<br>    <span class="hljs-keyword">private</span> T first;<br>    <span class="hljs-keyword">private</span> T second;<br><br>    <span class="hljs-keyword">public</span> T <span class="hljs-title function_">getFrist</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">return</span> first;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">setFrist</span><span class="hljs-params">(T newValue)</span> &#123;<br>        first = newValue;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="hashCode方法"><a href="#hashCode方法" class="headerlink" title="hashCode方法"></a>hashCode方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-comment">// Objects.hashCode</span><br>    <span class="hljs-keyword">return</span> Objects.hash(name, salary);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><p>普通类中定义泛型方法，需要在方法定义的返回值前面加上类型变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ArrayAlg</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T&gt; T <span class="hljs-title function_">getMiddle</span><span class="hljs-params">(T a)</span> &#123;<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">Size</span> &#123;<br>    SMALL(<span class="hljs-string">&quot;S&quot;</span>), MEDIUM(<span class="hljs-string">&quot;M&quot;</span>)<br>&#125;<br><span class="hljs-type">Size</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> Enum.valueOf(Size.class, <span class="hljs-string">&quot;SMALL&quot;</span>);<br>Size[] values = Size.values();<br>Size.MEDINUM.ordinal() <span class="hljs-comment">// enum枚举中常量的位置  1</span><br></code></pre></td></tr></table></figure>
+<h3 id="类型变量的限定"><a href="#类型变量的限定" class="headerlink" title="类型变量的限定"></a>类型变量的限定</h3><p>如果使用类作为限定，则必须是限定列表中的第一个</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> &lt;T <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Comparable</span>&gt; T <span class="hljs-title function_">getMiddle</span><span class="hljs-params">(T a)</span> &#123;<br>    <span class="hljs-keyword">return</span> a;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><h4 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-type">Class</span> <span class="hljs-variable">cls</span> <span class="hljs-operator">=</span> Class.forName(<span class="hljs-string">&quot;java.util.Random&quot;</span>);<br>    <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> cls.newInstance();<br>&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="泛型代码和虚拟机"><a href="#泛型代码和虚拟机" class="headerlink" title="泛型代码和虚拟机"></a>泛型代码和虚拟机</h3><h4 id="类型擦除"><a href="#类型擦除" class="headerlink" title="类型擦除"></a>类型擦除</h4><p>原始类型用第一个限定的类型变量来替换，如果没有给定限定符则用Object替换</p>
+<h4 id="翻译泛型方法"><a href="#翻译泛型方法" class="headerlink" title="翻译泛型方法"></a>翻译泛型方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">DateInerval</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Pair</span>&lt;LocalDate&gt; &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setSecond</span><span class="hljs-params">(LocalDate second)</span> &#123;<br><br>    &#125;<br>&#125;<br><span class="hljs-comment">// 在类型擦除后变为</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">DateInterval</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Pair</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setSecond</span><span class="hljs-params">(LocalDate second)</span> &#123;<br><br>    &#125;<br>&#125;<br><br><span class="hljs-type">DateInterval</span> <span class="hljs-variable">interval</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">DateInterval</span>(...);<br>Pair&lt;LocalDate&gt; pair = interval;<br>pair.setSecond(pair);<br><span class="hljs-comment">// Pair中只有setSecond(Object)，虚拟机用pair引用的对象调用这个方法，因此将会调用DateInterval.setSecond(Object)</span><br><span class="hljs-comment">// 此时会生成桥方法</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">setSecond</span><span class="hljs-params">(Object second)</span> &#123;<br>    setSecond((Date) second);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="getFields和getDeclaredFields"><a href="#getFields和getDeclaredFields" class="headerlink" title="getFields和getDeclaredFields"></a>getFields和getDeclaredFields</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Parent</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> publicField;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-type">int</span> protectedField;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> privateField;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Parent</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> publicField2;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-type">int</span> protectedField2;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> privateField2;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestMain2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Field[] fields = Child.class.getFields();<br>        fields[<span class="hljs-number">0</span>].setAccessible(<span class="hljs-literal">true</span>); <span class="hljs-comment">//</span><br>        Child.class.getDeclaredMethod()<br>        System.out.println(<span class="hljs-string">&quot;getFields(): &quot;</span> + Arrays.toString(fields));<br>        <span class="hljs-comment">// getFields(): [public int Child.publicField2, public int Parent.publicField]</span><br>        fields = Child.class.getDeclaredFields();<br>        System.out.println(<span class="hljs-string">&quot;getDeclaredFields(): &quot;</span> + Arrays.toString(fields));<br>        <span class="hljs-comment">// getDeclaredFields(): [public int Child.publicField2, protected int Child.protectedField2, private int Child.privateField2]</span><br>        fields = Child.class.getSuperclass().getDeclaredFields();<br>        System.out.println(<span class="hljs-string">&quot;parent getDeclaredFields(): &quot;</span> + Arrays.toString(fields));<br>        <span class="hljs-comment">// parent getDeclaredFields(): [public int Parent.publicField, protected int Parent.protectedField, private int Parent.privateField]</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="反射调用方法"><a href="#反射调用方法" class="headerlink" title="反射调用方法"></a>反射调用方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Method</span> <span class="hljs-variable">m1</span> <span class="hljs-operator">=</span> Employee.class.getMethod(<span class="hljs-string">&quot;getName&quot;</span>);<br><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> (String) m1.invoke(herry); <span class="hljs-comment">// 调用实例方法</span><br><span class="hljs-type">String</span> <span class="hljs-variable">name2</span> <span class="hljs-operator">=</span> (String) m1.invoke(<span class="hljs-literal">null</span>); <span class="hljs-comment">// 调用静态方法</span><br></code></pre></td></tr></table></figure>
+<h3 id="约束和局限"><a href="#约束和局限" class="headerlink" title="约束和局限"></a>约束和局限</h3><ul>
+<li>不能用基本类型实例化类型参数，没有<code>Pair&lt;double&gt;</code></li>
+<li>运行时类型查询只适用于原始类型，<code>getClass()</code>返回Pair.class</li>
+<li>不能创建参数类型化的数组，<code>Pair&lt;String&gt; table = new Pair&lt;&gt;[10]</code></li>
+<li>不能实例化类型变量，<code>new T()</code></li>
+<li>不能构造泛型数组，<code>T[] mm = new T[2]</code></li>
+</ul>
+<h3 id="通配符类型"><a href="#通配符类型" class="headerlink" title="通配符类型"></a>通配符类型</h3><h4 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h4><p>子类限定：? extends Employee</p>
+<p>超类限定: ? super Manager</p>
+<p>无限定：?</p>
 
                 
               </div>
@@ -350,8 +340,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>继承</div>
-      <div>http://xrcol.github.io/2023/03/15/f90616b0a613/</div>
+      <div>泛型程序设计</div>
+      <div>http://xrcol.github.io/2023/03/26/9cadd44316d9/</div>
     </div>
     <div class="license-meta">
       
@@ -363,7 +353,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>March 15, 2023</div>
+          <div>March 26, 2023</div>
         </div>
       
       
@@ -395,18 +385,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/18/49da83869ffd/" title="接口、lambda表达式和内部类">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">接口、lambda表达式和内部类</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/12/e42ac6b89405/" title="对象与类">
-                        <span class="hidden-mobile">对象与类</span>
+                      <a href="/2023/03/19/69efd1704bf5/" title="异常、断言和日志">
+                        <span class="hidden-mobile">异常、断言和日志</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
