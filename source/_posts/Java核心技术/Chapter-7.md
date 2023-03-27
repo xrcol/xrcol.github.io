@@ -71,4 +71,4 @@ try (Resource res = ...) {
 }
 ```
 
-在try块退出时，会自动调用res.close方法。还可以自定义实现AutoCloseable接口的类，来实现带资源的try语句
+在try块退出时，会自动调用res.close方法。还可以自定义实现AutoCloseable接口的类，来实现带资源的try语句，资源的关闭顺序是倒序的
