@@ -59,8 +59,7 @@ function loadStyleString(css) {
     } catch (e) {
         style.styleSheet.cssText = css
     }
-    let head = document.getElementByTagName('head')[0]
-    head.appendChild(style)
+    document.head.appendChild(style)
 }
 
 ```
