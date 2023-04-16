@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>表单脚本</title>
+    <link href="/2023/04/16/06eb16fbcc83/"/>
+    <url>/2023/04/16/06eb16fbcc83/</url>
+    
+    <content type="html"><![CDATA[<h2 id="表单脚本"><a href="#表单脚本" class="headerlink" title="表单脚本"></a>表单脚本</h2><h3 id="表单基础"><a href="#表单基础" class="headerlink" title="表单基础"></a>表单基础</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> form = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;form1&#x27;</span>)<br>form.<span class="hljs-property">acceptCharset</span> <span class="hljs-comment">// 服务器可以接受的字符集 ，等价于HTML的accept-charset属性</span><br>form.<span class="hljs-property">action</span> <span class="hljs-comment">// 请求的URL</span><br>form.<span class="hljs-property">elements</span> <span class="hljs-comment">// 表单中所有控件</span><br>form.<span class="hljs-property">enctype</span> <span class="hljs-comment">// 请求的编码类型</span><br>form.<span class="hljs-property">length</span> <span class="hljs-comment">// 表单中控件的数量</span><br>form.<span class="hljs-property">method</span> <span class="hljs-comment">// HTTP请求的方法类型</span><br>form.<span class="hljs-property">name</span> <span class="hljs-comment">// 表单的名字</span><br>form.<span class="hljs-title function_">reset</span>() <span class="hljs-comment">// 把表单字段重置为各自的默认值</span><br>form.<span class="hljs-title function_">submit</span>() <span class="hljs-comment">// 提交表单</span><br>form.<span class="hljs-property">target</span> <span class="hljs-comment">// 用于发送请求和接受响应的窗口的名字</span><br></code></pre></td></tr></table></figure><h4 id="表单字段"><a href="#表单字段" class="headerlink" title="表单字段"></a>表单字段</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> field1 = form.<span class="hljs-property">elements</span>[<span class="hljs-number">0</span>]<br><span class="hljs-keyword">let</span> field2 = form.<span class="hljs-property">elements</span>[<span class="hljs-string">&#x27;test&#x27;</span>]<br><span class="hljs-keyword">let</span> fieldCount = form.<span class="hljs-property">elements</span>.<span class="hljs-property">length</span><br></code></pre></td></tr></table></figure><h5 id="表单字段的公共事件"><a href="#表单字段的公共事件" class="headerlink" title="表单字段的公共事件"></a>表单字段的公共事件</h5><p>change: 在&lt;input&gt;和&lt;textarea&gt;元素的value发生变化且失去焦点时触发，或者在&lt;select&gt;元素选中项发生变化时触发</p><h3 id="文本框编程"><a href="#文本框编程" class="headerlink" title="文本框编程"></a>文本框编程</h3><h4 id="输入过滤"><a href="#输入过滤" class="headerlink" title="输入过滤"></a>输入过滤</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 屏蔽非数字字符</span><br>textbox.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;keypress&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (!<span class="hljs-regexp">/\d/</span>.<span class="hljs-title function_">test</span>(<span class="hljs-title class_">String</span>.<span class="hljs-title function_">fromCharCode</span>(event.<span class="hljs-property">charCode</span>)) &amp;&amp; event.<span class="hljs-property">charCode</span> &gt; <span class="hljs-number">9</span> &amp;&amp; !e.<span class="hljs-property">ctrlKey</span>) &#123;<br>        e.<span class="hljs-title function_">preventDefault</span>()<br>    &#125;<br>&#125;)<br></code></pre></td></tr></table></figure><h3 id="富文本编辑"><a href="#富文本编辑" class="headerlink" title="富文本编辑"></a>富文本编辑</h3><h4 id="contenteditable"><a href="#contenteditable" class="headerlink" title="contenteditable"></a>contenteditable</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;editable&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;richedit&quot;</span> <span class="hljs-attr">contenteditable</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure><h4 id="与富文本交互"><a href="#与富文本交互" class="headerlink" title="与富文本交互"></a>与富文本交互</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 切换粗体文本样式</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">execCommand</span>(<span class="hljs-string">&#x27;bold&#x27;</span>, <span class="hljs-literal">false</span>, <span class="hljs-literal">null</span>)<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>JavaScript高级程序设计</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>动画与canvas图形</title>
     <link href="/2023/04/15/ea2596e064c2/"/>
     <url>/2023/04/15/ea2596e064c2/</url>
