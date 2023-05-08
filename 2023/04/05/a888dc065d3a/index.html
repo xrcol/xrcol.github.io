@@ -24,7 +24,7 @@
 <meta property="og:description" content="DOM节点层级Node类型所有的DOM节点都必须实现Node接口 每个节点都存在childNodes属性，包含一个NodeList实例 NodeList不是Array的实例，但是可以像数组一样访问，同时是实时的活动对象，即DOM结构的变化会自动在NodeList中反映出来 操作节点 appendChild insertBefore 接受两个参数：要插入的节点和参照节点 replaceChild 接">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-04-05T16:02:00.000Z">
-<meta property="article:modified_time" content="2023-05-03T12:57:30.383Z">
+<meta property="article:modified_time" content="2023-05-08T15:27:28.847Z">
 <meta property="article:author" content="XR">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
@@ -288,8 +288,9 @@
 <li>normalize 处理文档子树的文本节点：删除空的文本节点和合并相邻的文本节点</li>
 </ul>
 <h4 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h4><h5 id="文档子节点"><a href="#文档子节点" class="headerlink" title="文档子节点"></a>文档子节点</h5><ul>
-<li>document.documentElement 默认指向html元素</li>
-<li>document.body 默认指向body元素</li>
+<li>document.documentElement 默认指向<strong>html</strong>元素</li>
+<li>document.body 默认指向<strong>body</strong>元素</li>
+<li>document.head 默认指向<strong>head</strong>元素</li>
 </ul>
 <h5 id="文档信息"><a href="#文档信息" class="headerlink" title="文档信息"></a>文档信息</h5><ul>
 <li>domcument.domain只能设置为URL中包含的值，多个iframe的domain相同时，可以访问对方的Javascript对象</li>
