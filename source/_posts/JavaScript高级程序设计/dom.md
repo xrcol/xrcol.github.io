@@ -33,8 +33,9 @@ NodeList不是Array的实例，但是可以像数组一样访问，同时是实�
 
 ##### 文档子节点
 
-- document.documentElement 默认指向html元素
-- document.body 默认指向body元素
+- document.documentElement 默认指向**html**元素
+- document.body 默认指向**body**元素
+- document.head 默认指向**head**元素
 
 ##### 文档信息
 
