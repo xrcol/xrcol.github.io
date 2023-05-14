@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>作用域和闭包</title>
+    <link href="/2023/05/14/fd1c98a2ecdf/"/>
+    <url>/2023/05/14/fd1c98a2ecdf/</url>
+    
+    <content type="html"><![CDATA[<h2 id="作用域和闭包"><a href="#作用域和闭包" class="headerlink" title="作用域和闭包"></a>作用域和闭包</h2><h3 id="LHS和RHS"><a href="#LHS和RHS" class="headerlink" title="LHS和RHS"></a>LHS和RHS</h3><p>LHS查询是试图找到变量的容器本身，然后对其赋值</p><p>RHS查询是简单地查找某个变量的值</p><p>在变量还没有声明（在任何作用域中都无法找到该变量）的情况下：</p><ul><li>RHS查询所有嵌套的作用域中都找不到对应的变量，则会抛出ReferenceError</li><li>LHS查询，如果在最顶层（全局作用域）中都无法找到该变量，则会在全局作用域中创建一个具有该名称的变量（程序运行在非严格模式下）；如果是在严格模式下，则会抛出和RHS类似的异常</li></ul><h3 id="作用域查找"><a href="#作用域查找" class="headerlink" title="作用域查找"></a>作用域查找</h3><p>作用域查找会在找到第一个匹配的标识符时停止，同时始终从运行时所处的最内部作用域开始，逐级向外或向上进行，直到遇到第一个匹配的标识符</p><p>词法作用域查找只会查找一级标识符，如果代码中引用了foo.bar.baz，词法作用域只会试图查找foo标识符，找到这个变量后，对象属性访问规则会接管对bar和baz属性的访问</p><h3 id="欺骗词法"><a href="#欺骗词法" class="headerlink" title="欺骗词法"></a>欺骗词法</h3><p>JavaScript提供了两种机制来实现：运行时修改词法作用域</p><h4 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h4><p>接受一个字节串为参数，并将其中的内容视为好像在书写时就存在于程序这个位置的代码</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">foo</span>(<span class="hljs-params">str, a</span>) &#123;<br>    <span class="hljs-built_in">eval</span>(str)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a, b)<br>&#125;<br><span class="hljs-keyword">var</span> b = <span class="hljs-number">2</span><br><span class="hljs-title function_">foo</span>(<span class="hljs-string">&#x27;var b = 3&#x27;</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// 1, 3</span><br></code></pre></td></tr></table></figure><p>严格模式下，eval在运行时有其自己的词法作用域，里面的声明无法修改所在的作用域</p><h4 id="with"><a href="#with" class="headerlink" title="with"></a>with</h4><p>with通常被当作重复引用同一个对象中多个属性的快捷方式，可以不需要重复引用对象本身。本质是将一个对象的引用当作作用域来处理，将对象的属性当作作用域中的标识符，从而创建了一个新的词法作用域</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> obj = &#123;<br>    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,<br>    <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>,<br>    <span class="hljs-attr">c</span>: <span class="hljs-number">3</span><br>&#125;<br>obj.<span class="hljs-property">a</span> = <span class="hljs-number">2</span><br>obj.<span class="hljs-property">b</span> = <span class="hljs-number">3</span><br>obj.<span class="hljs-property">c</span> = <span class="hljs-number">4</span><br><br><span class="hljs-comment">// 快捷方式</span><br><span class="hljs-title function_">with</span>(<span class="hljs-params">obj</span>) &#123;<br>    a = <span class="hljs-number">2</span><br>    b = <span class="hljs-number">3</span><br>    c = <span class="hljs-number">4</span><br>&#125;<br></code></pre></td></tr></table></figure><h4 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h4><p>JavaScript引擎会在编译阶段进行数项的性能优化。其中有些优化依赖于能够根据代码的词法进行静态分析，并预先确定所有变量和函数的定义位置，才能在执行过程中快速找到标识符。但如果代码中存在eval和with，则只能简单地假设关于标识符位置地判断都是无效的，因为无法在词法阶段分析明确知道eval会接收到什么代码，这些代码会如何修改作用域</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>你不知道的JavaScript</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>PriorityQueue源码解析</title>
     <link href="/2023/05/04/2aefd63fb879/"/>
     <url>/2023/05/04/2aefd63fb879/</url>
