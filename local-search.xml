@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>字符串哈希</title>
+    <link href="/2024/02/27/c5f264237f75/"/>
+    <url>/2024/02/27/c5f264237f75/</url>
+    
+    <content type="html"><![CDATA[<h2 id="字符串哈希"><a href="#字符串哈希" class="headerlink" title="字符串哈希"></a>字符串哈希</h2><h3 id="字符串哈希函数"><a href="#字符串哈希函数" class="headerlink" title="字符串哈希函数"></a>字符串哈希函数</h3><p>$$<br>Hash(s) &#x3D; (\sum_{i &#x3D; 1}^{n}{c_i * base^{n - i})}\quad mod \quad p)<br>$$</p><h3 id="字符串s任意字串的哈希值"><a href="#字符串s任意字串的哈希值" class="headerlink" title="字符串s任意字串的哈希值"></a>字符串s任意字串的哈希值</h3><p>$$<br>Hash(s_{l, r}) &#x3D; (a[r] - a[l - 1] * base^{r - l + 1}\quad mod \quad p)<br>$$</p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> base = <span class="hljs-number">101</span>, p = <span class="hljs-number">9999971</span>;<br><span class="hljs-type">int</span> base2 = <span class="hljs-number">131</span>, p = <span class="hljs-number">9999973</span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">Hash</span><span class="hljs-params">(<span class="hljs-type">char</span> s[], <span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        res = (res * base + s[i] - <span class="hljs-string">&#x27;a&#x27;</span>) % p;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">calc_substr_hash</span><span class="hljs-params">(<span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span> </span>&#123;<br>    <span class="hljs-type">int</span> res = a[l - <span class="hljs-number">1</span>] * <span class="hljs-built_in">pow</span>(base, r - l + <span class="hljs-number">1</span>) % p;<br>    <span class="hljs-keyword">return</span> (a[r] - t + p) % p;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>二叉树</title>
     <link href="/2024/02/26/205f0d45381b/"/>
     <url>/2024/02/26/205f0d45381b/</url>

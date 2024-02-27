@@ -16,22 +16,22 @@
   <meta name="author" content="XR">
   <meta name="keywords" content="">
   
-    <meta name="description" content="模块CommonJS模块加载为同步操作，模块加载后会被缓存，后续加载会取得缓存的模块 1234let moduleB &#x3D; require(&amp;#x27;.&#x2F;moduleB&amp;#x27;)module.exports &#x3D; &amp;#123;    stuff: moduleB.doStuff()&amp;#125;  ES6模块模块标签与定义1&lt;script type&#x3D;&amp;#x27;module&amp;#x27; sr">
+    <meta name="description" content="字符串哈希字符串哈希函数$$Hash(s) &#x3D; (\sum_{i &#x3D; 1}^{n}{c_i * base^{n - i})}\quad mod \quad p)$$ 字符串s任意字串的哈希值$$Hash(s_{l, r}) &#x3D; (a[r] - a[l - 1] * base^{r - l + 1}\quad mod \quad p)$$ 代码实现12345678910">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模块">
-<meta property="og:url" content="http://xrcol.github.io/2023/05/02/2438a99988b2/index.html">
+<meta property="og:title" content="字符串哈希">
+<meta property="og:url" content="http://xrcol.github.io/2024/02/27/c5f264237f75/index.html">
 <meta property="og:site_name" content="XR&#39;Blog">
-<meta property="og:description" content="模块CommonJS模块加载为同步操作，模块加载后会被缓存，后续加载会取得缓存的模块 1234let moduleB &#x3D; require(&amp;#x27;.&#x2F;moduleB&amp;#x27;)module.exports &#x3D; &amp;#123;    stuff: moduleB.doStuff()&amp;#125;  ES6模块模块标签与定义1&lt;script type&#x3D;&amp;#x27;module&amp;#x27; sr">
+<meta property="og:description" content="字符串哈希字符串哈希函数$$Hash(s) &#x3D; (\sum_{i &#x3D; 1}^{n}{c_i * base^{n - i})}\quad mod \quad p)$$ 字符串s任意字串的哈希值$$Hash(s_{l, r}) &#x3D; (a[r] - a[l - 1] * base^{r - l + 1}\quad mod \quad p)$$ 代码实现12345678910">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-05-02T10:43:00.000Z">
-<meta property="article:modified_time" content="2024-02-27T13:42:48.655Z">
+<meta property="article:published_time" content="2024-02-27T21:41:10.000Z">
+<meta property="article:modified_time" content="2024-02-27T13:42:48.659Z">
 <meta property="article:author" content="XR">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>模块 - XR&#39;Blog</title>
+  <title>字符串哈希 - XR&#39;Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="模块"></span>
+            <span id="subtitle" data-typed-text="字符串哈希"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-05-02 10:43" pubdate>
-          May 2, 2023 am
+        <time datetime="2024-02-27 21:41" pubdate>
+          February 27, 2024 pm
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k words
+          437 words
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          9 mins
+          4 mins
         
       </span>
     
@@ -269,28 +269,15 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">模块</h1>
+            <h1 style="display: none">字符串哈希</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><h3 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h3><p>模块加载为同步操作，模块加载后会被缓存，后续加载会取得缓存的模块</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> moduleB = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./moduleB&#x27;</span>)<br><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = &#123;<br>    <span class="hljs-attr">stuff</span>: moduleB.<span class="hljs-title function_">doStuff</span>()<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="字符串哈希"><a href="#字符串哈希" class="headerlink" title="字符串哈希"></a>字符串哈希</h2><h3 id="字符串哈希函数"><a href="#字符串哈希函数" class="headerlink" title="字符串哈希函数"></a>字符串哈希函数</h3><p>$$<br>Hash(s) &#x3D; (\sum_{i &#x3D; 1}^{n}{c_i * base^{n - i})}\quad mod \quad p)<br>$$</p>
+<h3 id="字符串s任意字串的哈希值"><a href="#字符串s任意字串的哈希值" class="headerlink" title="字符串s任意字串的哈希值"></a>字符串s任意字串的哈希值</h3><p>$$<br>Hash(s_{l, r}) &#x3D; (a[r] - a[l - 1] * base^{r - l + 1}\quad mod \quad p)<br>$$</p>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">int</span> base = <span class="hljs-number">101</span>, p = <span class="hljs-number">9999971</span>;<br><span class="hljs-type">int</span> base2 = <span class="hljs-number">131</span>, p = <span class="hljs-number">9999973</span>;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">Hash</span><span class="hljs-params">(<span class="hljs-type">char</span> s[], <span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        res = (res * base + s[i] - <span class="hljs-string">&#x27;a&#x27;</span>) % p;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">calc_substr_hash</span><span class="hljs-params">(<span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span> </span>&#123;<br>    <span class="hljs-type">int</span> res = a[l - <span class="hljs-number">1</span>] * <span class="hljs-built_in">pow</span>(base, r - l + <span class="hljs-number">1</span>) % p;<br>    <span class="hljs-keyword">return</span> (a[r] - t + p) % p;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="ES6模块"><a href="#ES6模块" class="headerlink" title="ES6模块"></a>ES6模块</h3><h4 id="模块标签与定义"><a href="#模块标签与定义" class="headerlink" title="模块标签与定义"></a>模块标签与定义</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;module&#x27;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#x27;xxx.js&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span> // 实际行为和defer一致<br></code></pre></td></tr></table></figure>
-
-<h4 id="模块行为"><a href="#模块行为" class="headerlink" title="模块行为"></a>模块行为</h4><ul>
-<li>模块代码只能加载一次，是单例</li>
-<li>默认在严格模式下执行</li>
-<li>模块顶级this的值是undefined</li>
-<li>模块中的var声明不会添加到window对象</li>
-<li>模块是异步加载和执行的</li>
-</ul>
-<h4 id="模块导出"><a href="#模块导出" class="headerlink" title="模块导出"></a>模块导出</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 命名导出</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> foo = <span class="hljs-string">&#x27;foo&#x27;</span><br><span class="hljs-keyword">const</span> foo = <span class="hljs-string">&#x27;foo&#x27;</span><br><span class="hljs-keyword">export</span> &#123; foo &#125;<br><span class="hljs-comment">// 默认导出</span><br><span class="hljs-keyword">const</span> foo = <span class="hljs-string">&#x27;foo&#x27;</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> foo ==&gt; <span class="hljs-keyword">export</span> &#123; foo <span class="hljs-keyword">as</span> <span class="hljs-keyword">default</span> &#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="模块导入"><a href="#模块导入" class="headerlink" title="模块导入"></a>模块导入</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 命名导入</span><br><span class="hljs-keyword">export</span> &#123; foo, bar, baz &#125;<br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-title class_">Foo</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo.js&#x27;</span><br><span class="hljs-comment">// 默认导入</span><br><span class="hljs-keyword">import</span> foo <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo.js&#x27;</span> ==&gt; <span class="hljs-keyword">import</span> &#123; <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> foo &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo.js&#x27;</span><br><span class="hljs-comment">// 命名和默认导入</span><br><span class="hljs-keyword">import</span> foo , &#123; baz, bar &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo.js&#x27;</span><br><span class="hljs-keyword">import</span> &#123; <span class="hljs-keyword">default</span> <span class="hljs-keyword">as</span> foo, baz, bar &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo.js&#x27;</span><br><span class="hljs-keyword">import</span> foo, * <span class="hljs-keyword">as</span> <span class="hljs-title class_">Foo</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./foo.js&#x27;</span><br><br></code></pre></td></tr></table></figure>
-
-<h4 id="向后兼容"><a href="#向后兼容" class="headerlink" title="向后兼容"></a>向后兼容</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html">// 支持模块的会执行，不支持的不会执行<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&#x27;module&#x27;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#x27;module.js&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br>// 不支持模块的执行，支持的不执行<br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">nomodule</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#x27;module.js&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -309,7 +296,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="category-chain-item">JavaScript高级程序设计</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
 
@@ -324,7 +311,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/JavaScript/">#JavaScript</a>
+        <a href="/tags/Algorithm/">#Algorithm</a>
       
     </div>
   
@@ -336,8 +323,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>模块</div>
-      <div>http://xrcol.github.io/2023/05/02/2438a99988b2/</div>
+      <div>字符串哈希</div>
+      <div>http://xrcol.github.io/2024/02/27/c5f264237f75/</div>
     </div>
     <div class="license-meta">
       
@@ -349,7 +336,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>May 2, 2023</div>
+          <div>February 27, 2024</div>
         </div>
       
       
@@ -381,18 +368,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/05/02/d90360dbff92/" title="ArrayList源码解析">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">ArrayList源码解析</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/02/68458ce54172/" title="客户端存储">
-                        <span class="hidden-mobile">客户端存储</span>
+                      <a href="/2024/02/26/205f0d45381b/" title="二叉树">
+                        <span class="hidden-mobile">二叉树</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
