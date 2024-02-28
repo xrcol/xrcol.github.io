@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>堆</title>
+    <link href="/2024/02/28/5a423b3f9d02/"/>
+    <url>/2024/02/28/5a423b3f9d02/</url>
+    
+    <content type="html"><![CDATA[<h2 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>可以称作完全二叉树，数组的[t]位置的左儿子和右儿子对应的位置分别为[2t]和[2t + 1]，父亲节点的位置为[t &#x2F; 2]</p><h4 id="大根堆"><a href="#大根堆" class="headerlink" title="大根堆"></a>大根堆</h4><p>父节点中的值大于两个子节点中的值，根节点最大的堆称为大根堆</p><h4 id="小根堆"><a href="#小根堆" class="headerlink" title="小根堆"></a>小根堆</h4><p>父节点中的值小于两个子节点中的值，根节点最小的堆称为小根堆</p><h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 以小根堆为例</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<br>    heap[++len] = x; <span class="hljs-comment">//先将元素放到数组末尾</span><br>    <span class="hljs-built_in">up</span>(len);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">up</span><span class="hljs-params">(<span class="hljs-type">int</span> k)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (k &gt; <span class="hljs-number">1</span> &amp;&amp; heap[k] &lt; heap[k / <span class="hljs-number">2</span>]) &#123;<br>        <span class="hljs-built_in">swap</span>(heap[k], heap[k / <span class="hljs-number">2</span>]);<br>        k = k / <span class="hljs-number">2</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">// 删除堆顶元素</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">delete</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">swap</span>(heap[<span class="hljs-number">1</span>], heap[len]); <span class="hljs-comment">// 先将堆顶元素与数组末尾元素交换</span><br>    --len;<br>    <span class="hljs-built_in">down</span>(<span class="hljs-number">1</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">down</span><span class="hljs-params">(<span class="hljs-type">int</span> k)</span> </span>&#123;<br>    <span class="hljs-keyword">while</span> (k + k &lt;= len) &#123;<br>        <span class="hljs-type">int</span> j = k + k;<br>        <span class="hljs-keyword">if</span> (j + <span class="hljs-number">1</span> &lt;= len &amp;&amp; heap[j + <span class="hljs-number">1</span>] &lt; heap[j])<br>            ++j;<br>        <span class="hljs-keyword">if</span> (heap[k] &lt;= heap[j])<br>            <span class="hljs-keyword">break</span>;<br>        <span class="hljs-built_in">swap</span>(heap[k], heap[j]);<br>        k = j;<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 删除堆中任意元素</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">delete</span><span class="hljs-params">(<span class="hljs-type">int</span> pos)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (pos == len) &#123;<br>        --len;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-type">int</span> x = heap[pos], y = heap[len];<br>    <span class="hljs-built_in">swap</span>(heap[pos], heap[len]);<br>    --len;<br>    <span class="hljs-built_in">up</span>(pos);<br>    <span class="hljs-built_in">down</span>(pos);<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>字符串哈希</title>
     <link href="/2024/02/27/c5f264237f75/"/>
     <url>/2024/02/27/c5f264237f75/</url>
