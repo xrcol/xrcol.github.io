@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -22,9 +22,9 @@
 <meta property="og:url" content="http://xrcol.github.io/2023/02/25/186b36a47d01/index.html">
 <meta property="og:site_name" content="XR&#39;Blog">
 <meta property="og:description" content="第七章 迭代器与生成器迭代器基本使用方法迭代器只是使用游标来记录遍历的对象，如果可迭代对象在迭代期间修改了，迭代器也会反映出对应的变化 1234567let arr &#x3D; [&amp;#x27;foo&amp;#x27;, &amp;#x27;bar&amp;#x27;]let it &#x3D; arr[Symbol.iterator]console.log(it.next()) &#x2F;&#x2F; &amp;#123; done: false, value:">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-02-25T14:45:00.000Z">
-<meta property="article:modified_time" content="2024-02-29T01:10:11.745Z">
+<meta property="article:modified_time" content="2024-03-05T13:56:16.821Z">
 <meta property="article:author" content="XR">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary_large_image">
@@ -117,7 +117,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
+                <span>首页</span>
               </a>
             </li>
           
@@ -129,7 +129,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
+                <span>归档</span>
               </a>
             </li>
           
@@ -141,7 +141,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
+                <span>分类</span>
               </a>
             </li>
           
@@ -153,7 +153,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
+                <span>标签</span>
               </a>
             </li>
           
@@ -165,7 +165,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
+                <span>关于</span>
               </a>
             </li>
           
@@ -211,7 +211,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2023-02-25 14:45" pubdate>
-          February 25, 2023 pm
+          2023年2月25日 下午
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.2k words
+          4.2k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          35 mins
+          35 分钟
         
       </span>
     
@@ -243,7 +243,7 @@
       
         <span id="busuanzi_container_page_pv" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> views
+          <span id="busuanzi_value_page_pv"></span> 次
         </span>
         
       
@@ -310,7 +310,7 @@
 <h5 id="throw"><a href="#throw" class="headerlink" title="throw()"></a>throw()</h5><p>throw()方法会在暂停时将一个错误注入到生成器对象中，如果错位未被处理，则生成器就会关闭，处理了错误，则会跳过那一次执行的结果</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span>* <span class="hljs-title function_">generatorFn</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> x <span class="hljs-keyword">of</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]) &#123;<br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-keyword">yield</span> x<br>        &#125; <span class="hljs-keyword">catch</span>(e) &#123;&#125;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">let</span> g = <span class="hljs-title function_">generatorFn</span>()<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(g.<span class="hljs-title function_">next</span>()) <span class="hljs-comment">// &#123; done: false, value: 1 &#125;</span><br>g.<span class="hljs-keyword">throw</span>(<span class="hljs-string">&#x27;foo&#x27;</span>)<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(g.<span class="hljs-title function_">next</span>()) <span class="hljs-comment">// &#123; done: false, value: 3 &#125;</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="generator-x2F-yield实现async-x2F-await"><a href="#generator-x2F-yield实现async-x2F-await" class="headerlink" title="generator&#x2F;yield实现async&#x2F;await"></a>generator&#x2F;yield实现async&#x2F;await</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">_aync</span>(<span class="hljs-params">fn</span>) &#123;<br>    <span class="hljs-keyword">const</span> context = <span class="hljs-variable language_">this</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> fn === <span class="hljs-string">&#x27;function&#x27;</span>) fn = fn.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>)<br>        <span class="hljs-keyword">if</span> (!fn || <span class="hljs-keyword">typeof</span> fn.<span class="hljs-property">next</span> !=== <span class="hljs-string">&#x27;function&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-title function_">resolve</span>(fn)<br>        <br>        <span class="hljs-title function_">onFullFilled</span>()<br>        <br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">onFullFilled</span>(<span class="hljs-params">ret</span>) &#123;<br>            <span class="hljs-keyword">let</span> val<br>            <span class="hljs-keyword">try</span> &#123;<br>                val = fn.<span class="hljs-title function_">next</span>(ret)<br>            &#125; <span class="hljs-keyword">catch</span>(e) &#123;<br>                <span class="hljs-title function_">reject</span>(e)<br>            &#125;<br>            <span class="hljs-title function_">next</span>(val)<br>        &#125;<br>        <br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">onRejected</span>(<span class="hljs-params">err</span>) &#123;<br>            <span class="hljs-keyword">let</span> val<br>            <span class="hljs-keyword">try</span> &#123;<br>                val = fn.<span class="hljs-keyword">throw</span>(err)<br>            &#125; <span class="hljs-keyword">catch</span>(e) &#123;<br>                <span class="hljs-title function_">reject</span>(e)<br>            &#125;<br>            <span class="hljs-title function_">next</span>(val)<br>        &#125;<br>        <br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">next</span>(<span class="hljs-params">ret</span>) &#123;<br>            <span class="hljs-keyword">if</span> (ret.<span class="hljs-property">done</span>) <span class="hljs-keyword">return</span> <span class="hljs-title function_">resolve</span>(ret.<span class="hljs-property">value</span>)<br>            <span class="hljs-keyword">let</span> value = ret.<span class="hljs-property">value</span><br>            <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">isPromised</span>(value)) &#123;<br>                value = <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(value)<br>            &#125;<br>            <span class="hljs-keyword">return</span> value.<span class="hljs-title function_">then</span>(onFullFilled, onRejected)<br>        &#125;<br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">isPromised</span>(<span class="hljs-params">obj</span>) &#123;<br>            <span class="hljs-title class_">Object</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">toString</span>.<span class="hljs-title function_">call</span>(obj) === <span class="hljs-string">&#x27;[object Promise]&#x27;</span><br>        &#125;<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="generator-yield实现async-await"><a href="#generator-yield实现async-await" class="headerlink" title="generator&#x2F;yield实现async&#x2F;await"></a>generator&#x2F;yield实现async&#x2F;await</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">_aync</span>(<span class="hljs-params">fn</span>) &#123;<br>    <span class="hljs-keyword">const</span> context = <span class="hljs-variable language_">this</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> fn === <span class="hljs-string">&#x27;function&#x27;</span>) fn = fn.<span class="hljs-title function_">call</span>(<span class="hljs-variable language_">this</span>)<br>        <span class="hljs-keyword">if</span> (!fn || <span class="hljs-keyword">typeof</span> fn.<span class="hljs-property">next</span> !=== <span class="hljs-string">&#x27;function&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-title function_">resolve</span>(fn)<br>        <br>        <span class="hljs-title function_">onFullFilled</span>()<br>        <br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">onFullFilled</span>(<span class="hljs-params">ret</span>) &#123;<br>            <span class="hljs-keyword">let</span> val<br>            <span class="hljs-keyword">try</span> &#123;<br>                val = fn.<span class="hljs-title function_">next</span>(ret)<br>            &#125; <span class="hljs-keyword">catch</span>(e) &#123;<br>                <span class="hljs-title function_">reject</span>(e)<br>            &#125;<br>            <span class="hljs-title function_">next</span>(val)<br>        &#125;<br>        <br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">onRejected</span>(<span class="hljs-params">err</span>) &#123;<br>            <span class="hljs-keyword">let</span> val<br>            <span class="hljs-keyword">try</span> &#123;<br>                val = fn.<span class="hljs-keyword">throw</span>(err)<br>            &#125; <span class="hljs-keyword">catch</span>(e) &#123;<br>                <span class="hljs-title function_">reject</span>(e)<br>            &#125;<br>            <span class="hljs-title function_">next</span>(val)<br>        &#125;<br>        <br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">next</span>(<span class="hljs-params">ret</span>) &#123;<br>            <span class="hljs-keyword">if</span> (ret.<span class="hljs-property">done</span>) <span class="hljs-keyword">return</span> <span class="hljs-title function_">resolve</span>(ret.<span class="hljs-property">value</span>)<br>            <span class="hljs-keyword">let</span> value = ret.<span class="hljs-property">value</span><br>            <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">isPromised</span>(value)) &#123;<br>                value = <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(value)<br>            &#125;<br>            <span class="hljs-keyword">return</span> value.<span class="hljs-title function_">then</span>(onFullFilled, onRejected)<br>        &#125;<br>        <span class="hljs-keyword">function</span> <span class="hljs-title function_">isPromised</span>(<span class="hljs-params">obj</span>) &#123;<br>            <span class="hljs-title class_">Object</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">toString</span>.<span class="hljs-title function_">call</span>(obj) === <span class="hljs-string">&#x27;[object Promise]&#x27;</span><br>        &#125;<br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -363,26 +363,26 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>作者</div>
           <div>XR</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>February 25, 2023</div>
+          <div>发布于</div>
+          <div>2023年2月25日</div>
         </div>
       
       
       
         <div class="license-meta-item">
-          <div>Licensed under</div>
+          <div>许可协议</div>
           <div>
             
               
               
                 <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
                   </span>
                 </a>
@@ -405,7 +405,7 @@
                       <a href="/2023/02/26/86edf4799d63/" title="对象、类和面向对象编程">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">对象、类和面向对象编程</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
@@ -414,7 +414,7 @@
                     
                       <a href="/2023/02/20/dacee11c877b/" title="过滤器的使用和应用场景">
                         <span class="hidden-mobile">过滤器的使用和应用场景</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -435,7 +435,7 @@
     <div id="toc">
   <p class="toc-header">
     <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
+    <span>目录</span>
   </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
@@ -491,7 +491,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -499,7 +499,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -680,7 +680,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 </body>
 </html>
