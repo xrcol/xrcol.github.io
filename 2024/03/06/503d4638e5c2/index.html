@@ -16,24 +16,26 @@
   <meta name="author" content="XR">
   <meta name="keywords" content="">
   
-    <meta name="description" content="继承类、超类和子类子类构造器如果子类的构造器没有显示地调用超类的构造器，则将自动调用超类默认（没有参数）的构造器 多态静态绑定：private方法、static方法、final方法或者构造器，编译器可以准确知道调用哪个方法 动态绑定：调用的方法依赖于隐式参数的实际类型，调用方法时需要进行搜索，时间开销比较大 阻止继承定义类或方法时，使用final，来阻止类被继承，阻止方法被覆盖 访问修饰符   p">
+    <meta name="description" content="并查集并查集是一种树形数据结构，经常用于处理一些集合之间的操作，例如元素查找、集合合并等 不同集合在并查集中以不同的树来表示，一般每棵树的根节点会作为当前集合的代表元 想要查询两个元素是否在同一集合里，只需要比较两个元素所在集合的代表元是否相同即可 初始化123456789cont int MAX &#x3D; 1001; &#x2F;&#x2F; 最大元素个数int fa[MAX]; &#x2F;&#x2F; 记录每个元素由谁代表void in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="继承">
-<meta property="og:url" content="http://xrcol.github.io/2023/03/15/f90616b0a613/index.html">
+<meta property="og:title" content="并查集">
+<meta property="og:url" content="http://xrcol.github.io/2024/03/06/503d4638e5c2/index.html">
 <meta property="og:site_name" content="学无止境">
-<meta property="og:description" content="继承类、超类和子类子类构造器如果子类的构造器没有显示地调用超类的构造器，则将自动调用超类默认（没有参数）的构造器 多态静态绑定：private方法、static方法、final方法或者构造器，编译器可以准确知道调用哪个方法 动态绑定：调用的方法依赖于隐式参数的实际类型，调用方法时需要进行搜索，时间开销比较大 阻止继承定义类或方法时，使用final，来阻止类被继承，阻止方法被覆盖 访问修饰符   p">
+<meta property="og:description" content="并查集并查集是一种树形数据结构，经常用于处理一些集合之间的操作，例如元素查找、集合合并等 不同集合在并查集中以不同的树来表示，一般每棵树的根节点会作为当前集合的代表元 想要查询两个元素是否在同一集合里，只需要比较两个元素所在集合的代表元是否相同即可 初始化123456789cont int MAX &#x3D; 1001; &#x2F;&#x2F; 最大元素个数int fa[MAX]; &#x2F;&#x2F; 记录每个元素由谁代表void in">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-15T22:41:00.000Z">
+<meta property="og:image" content="http://xrcol.github.io/img/index_union_set.png">
+<meta property="article:published_time" content="2024-03-06T21:08:15.000Z">
 <meta property="article:modified_time" content="2024-03-06T13:22:51.855Z">
 <meta property="article:author" content="XR">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://xrcol.github.io/img/index_union_set.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>继承 - 学无止境</title>
+  <title>并查集 - 学无止境</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,13 +195,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner_union_set.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="继承"></span>
+            <span id="subtitle" data-typed-text="并查集"></span>
           
         </div>
 
@@ -210,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-15 22:41" pubdate>
-          2023年3月15日 晚上
+        <time datetime="2024-03-06 21:08" pubdate>
+          2024年3月6日 晚上
         </time>
       </span>
     
@@ -222,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          1.1k 字
         
       </span>
     
@@ -233,7 +235,7 @@
         
         
         
-          19 分钟
+          10 分钟
         
       </span>
     
@@ -279,42 +281,31 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">继承</h1>
+            <h1 style="display: none">并查集</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="类、超类和子类"><a href="#类、超类和子类" class="headerlink" title="类、超类和子类"></a>类、超类和子类</h3><h4 id="子类构造器"><a href="#子类构造器" class="headerlink" title="子类构造器"></a>子类构造器</h4><p>如果子类的构造器没有显示地调用超类的构造器，则将自动调用超类默认（没有参数）的构造器</p>
-<h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>静态绑定：private方法、static方法、final方法或者构造器，编译器可以准确知道调用哪个方法</p>
-<p>动态绑定：调用的方法依赖于隐式参数的实际类型，调用方法时需要进行搜索，时间开销比较大</p>
-<h4 id="阻止继承"><a href="#阻止继承" class="headerlink" title="阻止继承"></a>阻止继承</h4><p>定义类或方法时，使用final，来阻止类被继承，阻止方法被覆盖</p>
-<h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><table>
-<thead>
-<tr>
-<th align="center">private</th>
-<th align="center">public</th>
-<th align="center">protected</th>
-<th align="center">默认</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">仅对本类可见</td>
-<td align="center">对所有类可见</td>
-<td align="center">对本包和所有子类可见</td>
-<td align="center">对本包可见</td>
-</tr>
-</tbody></table>
-<h4 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Employee</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">equals</span><span class="hljs-params">(Employee otherObject)</span> &#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">this</span> == otherObject) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">if</span> (otherObject == <span class="hljs-literal">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">if</span> (getClass() != otherObject.getClass()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        <span class="hljs-type">Employee</span> <span class="hljs-variable">other</span> <span class="hljs-operator">=</span> (Employee) otherObject;<br>        <span class="hljs-keyword">return</span> Objects.equals(field, other.field);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h2 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h2><p>并查集是一种树形数据结构，经常用于处理一些集合之间的操作，例如元素查找、集合合并等</p>
+<p>不同集合在并查集中以不同的树来表示，一般每棵树的根节点会作为当前集合的代表元</p>
+<p>想要查询两个元素是否在同一集合里，只需要比较两个元素所在集合的代表元是否相同即可</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++">cont <span class="hljs-type">int</span> MAX = <span class="hljs-number">1001</span>; <span class="hljs-comment">// 最大元素个数</span><br><br><span class="hljs-type">int</span> fa[MAX]; <span class="hljs-comment">// 记录每个元素由谁代表</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-comment">// 初始化每个元素的代表元都是自己</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>        fa[i] = i;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="hashCode方法"><a href="#hashCode方法" class="headerlink" title="hashCode方法"></a>hashCode方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">hashCode</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-comment">// Objects.hashCode</span><br>    <span class="hljs-keyword">return</span> Objects.hash(name, salary);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="集合合并"><a href="#集合合并" class="headerlink" title="集合合并"></a>集合合并</h3><p>先找到x,y对应的代表元</p>
+<p>将其中一个代表元的fa指向另外一个</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (fa[x] == x) &#123;<br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">find</span>(fa[x]);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> </span>&#123;<br>    <span class="hljs-type">int</span> fx = <span class="hljs-built_in">find</span>(x), fy = <span class="hljs-built_in">find</span>(y);<br>    <span class="hljs-keyword">if</span> (fx == fy) <span class="hljs-keyword">return</span>;<br>    fa[fx] = fy;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">Size</span> &#123;<br>    SMALL(<span class="hljs-string">&quot;S&quot;</span>), MEDIUM(<span class="hljs-string">&quot;M&quot;</span>)<br>&#125;<br><span class="hljs-type">Size</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> Enum.valueOf(Size.class, <span class="hljs-string">&quot;SMALL&quot;</span>);<br>Size[] values = Size.values();<br>Size.MEDINUM.ordinal() <span class="hljs-comment">// enum枚举中常量的位置  1</span><br></code></pre></td></tr></table></figure>
+<h4 id="路径压缩"><a href="#路径压缩" class="headerlink" title="路径压缩"></a>路径压缩</h4><p>如果并查集在合并过程中形成了一条长链，则每次查找代表元都要花费大量的时间</p>
+<p>为了缩短并查集中的路径，可以在查询的过程中，将沿途的每个节点的fa都设为集合代表元</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (x == fa[x]) &#123;<br>        <span class="hljs-keyword">return</span> x;<br>    &#125;<br>    fa[x] = <span class="hljs-built_in">find</span>(fa[x]);<br>    <span class="hljs-keyword">return</span> fa[x];<br>&#125;<br><span class="hljs-comment">// 另一种写法</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> x == fa[x] ? x : (fa[x] = <span class="hljs-built_in">find</span>(fa[x]));<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><h4 id="Class类"><a href="#Class类" class="headerlink" title="Class类"></a>Class类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-type">Class</span> <span class="hljs-variable">cls</span> <span class="hljs-operator">=</span> Class.forName(<span class="hljs-string">&quot;java.util.Random&quot;</span>);<br>    <span class="hljs-type">Object</span> <span class="hljs-variable">obj</span> <span class="hljs-operator">=</span> cls.newInstance();<br>&#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="启发式合并"><a href="#启发式合并" class="headerlink" title="启发式合并"></a>启发式合并</h4><p>在合并集合的时候，将元素个数少的集合指向元素个数多的集合</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> </span>&#123;<br>    <span class="hljs-type">int</span> fx = <span class="hljs-built_in">find</span>(x), fy = <span class="hljs-built_in">find</span>(y);<br>    <span class="hljs-keyword">if</span> (fx == fy) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span> (size[fx] &gt; size[fy])<br>        <span class="hljs-built_in">swap</span>(fx, fy);<br>    fa[fx] = fy;<br>    size[fy] += size[fx];<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="getFields和getDeclaredFields"><a href="#getFields和getDeclaredFields" class="headerlink" title="getFields和getDeclaredFields"></a>getFields和getDeclaredFields</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Parent</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> publicField;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-type">int</span> protectedField;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> privateField;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Parent</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> publicField2;<br>    <span class="hljs-keyword">protected</span> <span class="hljs-type">int</span> protectedField2;<br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> privateField2;<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TestMain2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        Field[] fields = Child.class.getFields();<br>        fields[<span class="hljs-number">0</span>].setAccessible(<span class="hljs-literal">true</span>); <span class="hljs-comment">//</span><br>        Child.class.getDeclaredMethod()<br>        System.out.println(<span class="hljs-string">&quot;getFields(): &quot;</span> + Arrays.toString(fields));<br>        <span class="hljs-comment">// getFields(): [public int Child.publicField2, public int Parent.publicField]</span><br>        fields = Child.class.getDeclaredFields();<br>        System.out.println(<span class="hljs-string">&quot;getDeclaredFields(): &quot;</span> + Arrays.toString(fields));<br>        <span class="hljs-comment">// getDeclaredFields(): [public int Child.publicField2, protected int Child.protectedField2, private int Child.privateField2]</span><br>        fields = Child.class.getSuperclass().getDeclaredFields();<br>        System.out.println(<span class="hljs-string">&quot;parent getDeclaredFields(): &quot;</span> + Arrays.toString(fields));<br>        <span class="hljs-comment">// parent getDeclaredFields(): [public int Parent.publicField, protected int Parent.protectedField, private int Parent.privateField]</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="按深度合并"><a href="#按深度合并" class="headerlink" title="按深度合并"></a>按深度合并</h4><p>在合并集合的时候，将深度较小的集合合并到深度较大的一方</p>
+<p>在路径压缩的时候，有可能会破坏维护的深度值，但是算法总体复杂度不会变差</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> </span>&#123;<br>    <span class="hljs-type">int</span> fx = <span class="hljs-built_in">find</span>(x), fy = <span class="hljs-built_in">find</span>(y);<br>    <span class="hljs-keyword">if</span> (fx == fy) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-keyword">if</span> (depth[fx] &gt; depth[fy])<br>        <span class="hljs-built_in">swap</span>(fx, fy);<br>    fa[fx] = fy;<br>    <span class="hljs-keyword">if</span> (depth[fx] == depth[fy])<br>        depth[fy]++;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="反射调用方法"><a href="#反射调用方法" class="headerlink" title="反射调用方法"></a>反射调用方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">Method</span> <span class="hljs-variable">m1</span> <span class="hljs-operator">=</span> Employee.class.getMethod(<span class="hljs-string">&quot;getName&quot;</span>);<br><span class="hljs-type">String</span> <span class="hljs-variable">name</span> <span class="hljs-operator">=</span> (String) m1.invoke(herry); <span class="hljs-comment">// 调用实例方法</span><br><span class="hljs-type">String</span> <span class="hljs-variable">name2</span> <span class="hljs-operator">=</span> (String) m1.invoke(<span class="hljs-literal">null</span>); <span class="hljs-comment">// 调用静态方法</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -333,7 +324,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/" class="category-chain-item">Java核心技术</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
 
@@ -348,7 +339,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java/">#Java</a>
+        <a href="/tags/Algorithm/">#Algorithm</a>
       
     </div>
   
@@ -360,8 +351,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>继承</div>
-      <div>http://xrcol.github.io/2023/03/15/f90616b0a613/</div>
+      <div>并查集</div>
+      <div>http://xrcol.github.io/2024/03/06/503d4638e5c2/</div>
     </div>
     <div class="license-meta">
       
@@ -373,7 +364,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月15日</div>
+          <div>2024年3月6日</div>
         </div>
       
       
@@ -405,18 +396,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/18/49da83869ffd/" title="接口、lambda表达式和内部类">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">接口、lambda表达式和内部类</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/12/e42ac6b89405/" title="对象与类">
-                        <span class="hidden-mobile">对象与类</span>
+                      <a href="/2024/03/06/eaa5e163824b/" title="字典树">
+                        <span class="hidden-mobile">字典树</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
