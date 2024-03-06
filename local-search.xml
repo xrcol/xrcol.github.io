@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>字典树</title>
+    <link href="/2024/03/06/eaa5e163824b/"/>
+    <url>/2024/03/06/eaa5e163824b/</url>
+    
+    <content type="html"><![CDATA[<h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><p>Trie是一种存储字符串的树形数据结构，除了根节点，每个节点都可以存储一个字符，从根节点到树上某一节点的路径代表一个字符串</p><h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">const</span> <span class="hljs-type">int</span> MAXNODE = <span class="hljs-number">10010</span>; <span class="hljs-comment">// 最大节点数</span><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> charsize = <span class="hljs-number">26</span>; <span class="hljs-comment">// 字符集大小</span><br><span class="hljs-type">int</span> node[MAXNODE][charsize]; <span class="hljs-comment">// 记录节点编号</span><br><span class="hljs-type">bool</span> isend[MAXNODE]; <span class="hljs-comment">// 代表此编号节点是否为终止节点</span><br><span class="hljs-type">int</span> root = <span class="hljs-number">0</span>; <span class="hljs-comment">// 代表根节点编号</span><br><span class="hljs-type">int</span> cnt = <span class="hljs-number">0</span>; <span class="hljs-comment">// 当前节点数</span><br></code></pre></td></tr></table></figure><h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">TreeNode</span> &#123;<br>    TreeNode *children[charsize];<br>    <span class="hljs-type">bool</span> isend;<br>&#125; *root;<br></code></pre></td></tr></table></figure><h3 id="字典树的插入"><a href="#字典树的插入" class="headerlink" title="字典树的插入"></a>字典树的插入</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-type">char</span> s[], <span class="hljs-type">int</span> len)</span> </span>&#123;<br>    <span class="hljs-type">int</span> now = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>        <span class="hljs-type">int</span> x = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span> (!node[now][x]) &#123;<br>            node[now][x] = ++cnt;<br>        &#125;<br>        now = node[now][x];<br>    &#125;<br>    isend[now] = <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="字典树的查找"><a href="#字典树的查找" class="headerlink" title="字典树的查找"></a>字典树的查找</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-type">char</span> s[], <span class="hljs-type">int</span> len)</span> </span>&#123;<br>    <span class="hljs-type">int</span> now = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>        <span class="hljs-type">int</span> x = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span> (!node[now][x]) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        now = node[now][x];<br>    &#125;<br>    <span class="hljs-keyword">return</span> isend[now];<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Algorithm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>树</title>
     <link href="/2024/03/04/f76ed80c676a/"/>
     <url>/2024/03/04/f76ed80c676a/</url>

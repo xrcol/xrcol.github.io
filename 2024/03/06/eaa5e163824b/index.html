@@ -16,24 +16,26 @@
   <meta name="author" content="XR">
   <meta name="keywords" content="">
   
-    <meta name="description" content="BOMwindow对象窗口关系 window.top始终指向最上层窗口 window.parent始终指向当前窗口的父窗口 window.self始终指向自身  窗口位置和像素比 window.screenLeft、window.screenX表示窗口相对于屏幕左侧的距离 window.screenTop、window.screenY表示窗口相对于屏幕顶部的距离 moveTo()和moveBy()">
+    <meta name="description" content="字典树Trie是一种存储字符串的树形数据结构，除了根节点，每个节点都可以存储一个字符，从根节点到树上某一节点的路径代表一个字符串 数据结构数组123456const int MAXNODE &#x3D; 10010; &#x2F;&#x2F; 最大节点数const int charsize &#x3D; 26; &#x2F;&#x2F; 字符集大小int node[MAXNODE][charsize]; &#x2F;&#x2F; 记录节点编号bool isend[MAXNOD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BOM">
-<meta property="og:url" content="http://xrcol.github.io/2023/04/02/201679cb1090/index.html">
+<meta property="og:title" content="字典树">
+<meta property="og:url" content="http://xrcol.github.io/2024/03/06/eaa5e163824b/index.html">
 <meta property="og:site_name" content="学无止境">
-<meta property="og:description" content="BOMwindow对象窗口关系 window.top始终指向最上层窗口 window.parent始终指向当前窗口的父窗口 window.self始终指向自身  窗口位置和像素比 window.screenLeft、window.screenX表示窗口相对于屏幕左侧的距离 window.screenTop、window.screenY表示窗口相对于屏幕顶部的距离 moveTo()和moveBy()">
+<meta property="og:description" content="字典树Trie是一种存储字符串的树形数据结构，除了根节点，每个节点都可以存储一个字符，从根节点到树上某一节点的路径代表一个字符串 数据结构数组123456const int MAXNODE &#x3D; 10010; &#x2F;&#x2F; 最大节点数const int charsize &#x3D; 26; &#x2F;&#x2F; 字符集大小int node[MAXNODE][charsize]; &#x2F;&#x2F; 记录节点编号bool isend[MAXNOD">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-02T23:03:00.000Z">
-<meta property="article:modified_time" content="2024-03-06T12:13:14.725Z">
+<meta property="og:image" content="http://xrcol.github.io/img/index_trie.png">
+<meta property="article:published_time" content="2024-03-06T20:08:30.000Z">
+<meta property="article:modified_time" content="2024-03-06T12:13:14.729Z">
 <meta property="article:author" content="XR">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Algorithm">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://xrcol.github.io/img/index_trie.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>BOM - 学无止境</title>
+  <title>字典树 - 学无止境</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -193,13 +195,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/banner_trie.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="BOM"></span>
+            <span id="subtitle" data-typed-text="字典树"></span>
           
         </div>
 
@@ -210,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-02 23:03" pubdate>
-          2023年4月2日 晚上
+        <time datetime="2024-03-06 20:08" pubdate>
+          2024年3月6日 晚上
         </time>
       </span>
     
@@ -222,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          718 字
         
       </span>
     
@@ -233,7 +235,7 @@
         
         
         
-          18 分钟
+          6 分钟
         
       </span>
     
@@ -279,45 +281,22 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">BOM</h1>
+            <h1 style="display: none">字典树</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><h3 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h3><h4 id="窗口关系"><a href="#窗口关系" class="headerlink" title="窗口关系"></a>窗口关系</h4><ul>
-<li>window.top始终指向最上层窗口</li>
-<li>window.parent始终指向当前窗口的父窗口</li>
-<li>window.self始终指向自身</li>
-</ul>
-<h4 id="窗口位置和像素比"><a href="#窗口位置和像素比" class="headerlink" title="窗口位置和像素比"></a>窗口位置和像素比</h4><ul>
-<li>window.screenLeft、window.screenX表示窗口相对于屏幕左侧的距离</li>
-<li>window.screenTop、window.screenY表示窗口相对于屏幕顶部的距离</li>
-<li>moveTo()和moveBy()，移动窗口的位置</li>
-<li>window.devicePixelRatio表示物理像素与逻辑像素之间的缩放系数</li>
-</ul>
-<h4 id="窗口大小"><a href="#窗口大小" class="headerlink" title="窗口大小"></a>窗口大小</h4><ul>
-<li>innerWidth和outerWidth</li>
-<li>resizeTo和resizeBy缩放到固定的大小</li>
-</ul>
-<h4 id="视口位置"><a href="#视口位置" class="headerlink" title="视口位置"></a>视口位置</h4><ul>
-<li>window.pageXoffset和window.scrollX</li>
-<li>window.pageYoffset和window.scrollY</li>
-<li>scrollTo、scrollBy滚动距离</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">scrollTo</span>(&#123;<br>    <span class="hljs-attr">left</span>: <span class="hljs-number">100</span>,<br>    <span class="hljs-attr">top</span>: <span class="hljs-number">100</span>,<br>    <span class="hljs-attr">behavior</span>: <span class="hljs-string">&#x27;auto&#x27;</span> <span class="hljs-comment">// &#x27;smooth&#x27;</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+                <h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><p>Trie是一种存储字符串的树形数据结构，除了根节点，每个节点都可以存储一个字符，从根节点到树上某一节点的路径代表一个字符串</p>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-type">const</span> <span class="hljs-type">int</span> MAXNODE = <span class="hljs-number">10010</span>; <span class="hljs-comment">// 最大节点数</span><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> charsize = <span class="hljs-number">26</span>; <span class="hljs-comment">// 字符集大小</span><br><span class="hljs-type">int</span> node[MAXNODE][charsize]; <span class="hljs-comment">// 记录节点编号</span><br><span class="hljs-type">bool</span> isend[MAXNODE]; <span class="hljs-comment">// 代表此编号节点是否为终止节点</span><br><span class="hljs-type">int</span> root = <span class="hljs-number">0</span>; <span class="hljs-comment">// 代表根节点编号</span><br><span class="hljs-type">int</span> cnt = <span class="hljs-number">0</span>; <span class="hljs-comment">// 当前节点数</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript">location.<span class="hljs-property">href</span> <span class="hljs-comment">// &quot;http://www.wrox.com:80/WileyCDA/?q=javascript#contents&quot;</span><br>location.<span class="hljs-property">hash</span> <span class="hljs-comment">// &quot;#contents&quot;</span><br>location.<span class="hljs-property">host</span> <span class="hljs-comment">// &quot;www.wrox.com:80&quot;</span><br>location.<span class="hljs-property">hostname</span> <span class="hljs-comment">// &quot;www.wrox.com&quot;</span><br>location.<span class="hljs-property">pathname</span> <span class="hljs-comment">// &quot;/WileyCDA&quot;</span><br>location.<span class="hljs-property">port</span> <span class="hljs-comment">// &quot;80&quot;</span><br>location.<span class="hljs-property">protocol</span> <span class="hljs-comment">// &quot;http&quot;</span><br>location.<span class="hljs-property">search</span> <span class="hljs-comment">// &quot;?q=javascript&quot;</span><br>location.<span class="hljs-property">origin</span> <span class="hljs-comment">// &quot;http://www.wrox.com&quot;</span><br><span class="hljs-keyword">let</span> qs = <span class="hljs-string">&quot;?q=javascript&quot;</span><br><span class="hljs-keyword">let</span> params = <span class="hljs-keyword">new</span> <span class="hljs-title class_">URLSearchParams</span>(qs) <span class="hljs-comment">// &quot;q=javascript&quot;</span><br>params.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;test&#x27;</span>)<br>params.<span class="hljs-title function_">toString</span>() <span class="hljs-comment">// q=javascript&amp;name=test</span><br></code></pre></td></tr></table></figure>
+<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">TreeNode</span> &#123;<br>    TreeNode *children[charsize];<br>    <span class="hljs-type">bool</span> isend;<br>&#125; *root;<br></code></pre></td></tr></table></figure>
 
-<h4 id="操作地址"><a href="#操作地址" class="headerlink" title="操作地址"></a>操作地址</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 修改浏览器地址</span><br>location.<span class="hljs-title function_">assign</span>(<span class="hljs-string">&quot;http://www.wrox.com&quot;</span>)<br>location.<span class="hljs-property">href</span> = <span class="hljs-string">&quot;http://www.wrox.com&quot;</span>;<br><span class="hljs-comment">// 除了hash之外，只要修改location的一个属性，就会导致页面重新加载URL，同时浏览器历史记录中会增加相应的记录</span><br>location.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&quot;http://www.wrox.com&quot;</span>) <span class="hljs-comment">// 不会增加历史记录，即不能回到前一页</span><br>location.<span class="hljs-title function_">reload</span>() <span class="hljs-comment">//重新加载页面，已最有效的方式</span><br>location.<span class="hljs-title function_">reload</span>(<span class="hljs-literal">true</span>) <span class="hljs-comment">// 重新加载页面，从服务器加载</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><h4 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript">history.<span class="hljs-title function_">go</span>(-<span class="hljs-number">1</span>) <span class="hljs-comment">// 后退一页</span><br>history.<span class="hljs-title function_">go</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">// 前进一页</span><br>history.<span class="hljs-title function_">back</span>() <span class="hljs-comment">// 后退一页</span><br>history.<span class="hljs-title function_">forward</span>() <span class="hljs-comment">// 前进一页</span><br></code></pre></td></tr></table></figure>
 
-<h4 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> state = &#123; <span class="hljs-attr">foo</span>: <span class="hljs-string">&#x27;bar&#x27;</span> &#125;<br>history.<span class="hljs-title function_">pushState</span>(state, <span class="hljs-string">&#x27;new title&#x27;</span>, <span class="hljs-string">&#x27;baz.html&#x27;</span>) <span class="hljs-comment">// state对象(500kb~1MB)、新状态的标题和（可选的）相对URL</span><br></code></pre></td></tr></table></figure>
+<h3 id="字典树的插入"><a href="#字典树的插入" class="headerlink" title="字典树的插入"></a>字典树的插入</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-type">char</span> s[], <span class="hljs-type">int</span> len)</span> </span>&#123;<br>    <span class="hljs-type">int</span> now = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>        <span class="hljs-type">int</span> x = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span> (!node[now][x]) &#123;<br>            node[now][x] = ++cnt;<br>        &#125;<br>        now = node[now][x];<br>    &#125;<br>    isend[now] = <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>执行pushState后，状态信息会被推送到历史记录，同时浏览器地址栏会改变以反映新的相对URL，浏览器不会向服务器发起请求</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">// 点击后退按钮时，触发window上的popstate事件</span><br><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;popstate&quot;</span>, <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">let</span> state = event.<span class="hljs-property">state</span><br>    <span class="hljs-keyword">if</span> (state) &#123; <span class="hljs-comment">// 第一个页面加载时状态为null</span><br>        <span class="hljs-title function_">processState</span>(state)<br>    &#125;<br>&#125;)<br>history.<span class="hljs-title function_">replaceState</span>(&#123; <span class="hljs-attr">foo</span>: <span class="hljs-string">&#x27;bar&#x27;</span>&#125;, <span class="hljs-string">&#x27;new title&#x27;</span>) <span class="hljs-comment">// 不会创建历史记录，只会覆盖当前状态</span><br><br></code></pre></td></tr></table></figure>
+<h3 id="字典树的查找"><a href="#字典树的查找" class="headerlink" title="字典树的查找"></a>字典树的查找</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-type">char</span> s[], <span class="hljs-type">int</span> len)</span> </span>&#123;<br>    <span class="hljs-type">int</span> now = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>        <span class="hljs-type">int</span> x = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>        <span class="hljs-keyword">if</span> (!node[now][x]) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        now = node[now][x];<br>    &#125;<br>    <span class="hljs-keyword">return</span> isend[now];<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>state对象中应该只包含可以被序列化的信息，同时在使用HTML5状态管理时，要确保通过pushState()创建的每个“假”URL背后都对应着服务器上一个真实的物理URL，否则单击刷新会导致404错误，所有的SPA框架都必须通过某些配置解决这个问题</p>
 
                 
               </div>
@@ -336,7 +315,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="category-chain-item">JavaScript高级程序设计</a>
+  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
   
   
 
@@ -351,7 +330,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/JavaScript/">#JavaScript</a>
+        <a href="/tags/Algorithm/">#Algorithm</a>
       
     </div>
   
@@ -363,8 +342,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>BOM</div>
-      <div>http://xrcol.github.io/2023/04/02/201679cb1090/</div>
+      <div>字典树</div>
+      <div>http://xrcol.github.io/2024/03/06/eaa5e163824b/</div>
     </div>
     <div class="license-meta">
       
@@ -376,7 +355,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月2日</div>
+          <div>2024年3月6日</div>
         </div>
       
       
@@ -408,18 +387,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/05/a888dc065d3a/" title="DOM">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">DOM</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/26/9cadd44316d9/" title="泛型程序设计">
-                        <span class="hidden-mobile">泛型程序设计</span>
+                      <a href="/2024/03/04/f76ed80c676a/" title="树">
+                        <span class="hidden-mobile">树</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
