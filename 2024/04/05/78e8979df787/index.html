@@ -16,24 +16,24 @@
   <meta name="author" content="XR">
   <meta name="keywords" content="">
   
-    <meta name="description" content="异常、断言和日志处理错误异常分类Java中的异常层次结构  classDiagram     Throwable &lt;|-- Error     Throwable &lt;|-- Exception     Exception &lt;|-- IOException     Exception &lt;|-- RuntimeException     class Error     clas">
+    <meta name="description" content="MYSQL必知必会基础去除重复数据1select distinct vend_id from products;  限制返回的行数12# 要检索的开始行和行数select name from products limit 5, 5;  按列排序123# 升序 ASC  降序 DESCselect id, price, name from products order by price DESC,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="异常、断言和日志">
-<meta property="og:url" content="http://xrcol.github.io/2023/03/19/69efd1704bf5/index.html">
+<meta property="og:title" content="MYSQL必知必会">
+<meta property="og:url" content="http://xrcol.github.io/2024/04/05/78e8979df787/index.html">
 <meta property="og:site_name" content="学无止境">
-<meta property="og:description" content="异常、断言和日志处理错误异常分类Java中的异常层次结构  classDiagram     Throwable &lt;|-- Error     Throwable &lt;|-- Exception     Exception &lt;|-- IOException     Exception &lt;|-- RuntimeException     class Error     clas">
+<meta property="og:description" content="MYSQL必知必会基础去除重复数据1select distinct vend_id from products;  限制返回的行数12# 要检索的开始行和行数select name from products limit 5, 5;  按列排序123# 升序 ASC  降序 DESCselect id, price, name from products order by price DESC,">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-03-19T16:01:00.000Z">
+<meta property="article:published_time" content="2024-04-05T11:08:15.000Z">
 <meta property="article:modified_time" content="2024-04-06T15:05:08.826Z">
 <meta property="article:author" content="XR">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>异常、断言和日志 - 学无止境</title>
+  <title>MYSQL必知必会 - 学无止境</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="异常、断言和日志"></span>
+            <span id="subtitle" data-typed-text="MYSQL必知必会"></span>
           
         </div>
 
@@ -210,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-19 16:01" pubdate>
-          2023年3月19日 下午
+        <time datetime="2024-04-05 11:08" pubdate>
+          2024年4月5日 上午
         </time>
       </span>
     
@@ -222,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          764 字
+          1.9k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
         
-          7 分钟
+          16 分钟
         
       </span>
     
@@ -279,33 +279,145 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">异常、断言和日志</h1>
+            <h1 style="display: none">MYSQL必知必会</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="异常、断言和日志"><a href="#异常、断言和日志" class="headerlink" title="异常、断言和日志"></a>异常、断言和日志</h2><h3 id="处理错误"><a href="#处理错误" class="headerlink" title="处理错误"></a>处理错误</h3><h4 id="异常分类"><a href="#异常分类" class="headerlink" title="异常分类"></a>异常分类</h4><center>Java中的异常层次结构</center>
+                <h2 id="MYSQL必知必会"><a href="#MYSQL必知必会" class="headerlink" title="MYSQL必知必会"></a>MYSQL必知必会</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h5 id="去除重复数据"><a href="#去除重复数据" class="headerlink" title="去除重复数据"></a>去除重复数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">distinct</span> vend_id <span class="hljs-keyword">from</span> products;<br></code></pre></td></tr></table></figure>
 
-<pre><code class=" mermaid">classDiagram
-    Throwable &lt;|-- Error
-    Throwable &lt;|-- Exception
-    Exception &lt;|-- IOException
-    Exception &lt;|-- RuntimeException
-    class Error
-    class Exception
-    class IOException
-    class RuntimeException
-</code></pre>
+<h5 id="限制返回的行数"><a href="#限制返回的行数" class="headerlink" title="限制返回的行数"></a>限制返回的行数</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql"># 要检索的开始行和行数<br><span class="hljs-keyword">select</span> name <span class="hljs-keyword">from</span> products limit <span class="hljs-number">5</span>, <span class="hljs-number">5</span>;<br></code></pre></td></tr></table></figure>
 
-<h4 id="创建异常类"><a href="#创建异常类" class="headerlink" title="创建异常类"></a>创建异常类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FileFormatException</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IOException</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">FileFormatException</span><span class="hljs-params">()</span> &#123;&#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">FileFormatException</span><span class="hljs-params">(String gripe)</span> &#123;<br>        <span class="hljs-built_in">super</span>(gripe)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="按列排序"><a href="#按列排序" class="headerlink" title="按列排序"></a>按列排序</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sql"># 升序 <span class="hljs-keyword">ASC</span>  降序 <span class="hljs-keyword">DESC</span><br><span class="hljs-keyword">select</span> id, price, name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> price <span class="hljs-keyword">DESC</span>, name <span class="hljs-keyword">ASC</span>;<br><span class="hljs-keyword">select</span> price <span class="hljs-keyword">from</span> products <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> price <span class="hljs-keyword">DESC</span> limit <span class="hljs-number">1</span>;<br></code></pre></td></tr></table></figure>
 
-<h3 id="捕获异常"><a href="#捕获异常" class="headerlink" title="捕获异常"></a>捕获异常</h3><h4 id="捕获多个异常"><a href="#捕获多个异常" class="headerlink" title="捕获多个异常"></a>捕获多个异常</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (FileNotFoundException | UnknownHostException e) &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (IOException e) &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="过滤数据"><a href="#过滤数据" class="headerlink" title="过滤数据"></a>过滤数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> id, name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> id <span class="hljs-operator">!=</span> <span class="hljs-number">1003</span>;<br><span class="hljs-keyword">select</span> name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> price <span class="hljs-keyword">is</span> <span class="hljs-keyword">NULL</span>;<br><span class="hljs-keyword">select</span> name, price <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> price <span class="hljs-keyword">between</span> <span class="hljs-number">5</span> <span class="hljs-keyword">and</span> <span class="hljs-number">10</span>;<br><span class="hljs-keyword">select</span> name, price <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> id <span class="hljs-keyword">in</span> (<span class="hljs-number">1002</span>, <span class="hljs-number">1003</span>) <span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> name;<br></code></pre></td></tr></table></figure>
 
-<h4 id="再次抛出异常与异常链"><a href="#再次抛出异常与异常链" class="headerlink" title="再次抛出异常与异常链"></a>再次抛出异常与异常链</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> &#123;<br><br>&#125; <span class="hljs-keyword">catch</span> (SQLException e) &#123;<br>    <span class="hljs-type">Throwable</span> <span class="hljs-variable">se</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ServletException</span>(<span class="hljs-string">&quot;datebase error&quot;</span>);<br>    se.initCause(e);<br>    <span class="hljs-keyword">throw</span> se;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="通配符过滤"><a href="#通配符过滤" class="headerlink" title="通配符过滤"></a>通配符过滤</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"># <span class="hljs-operator">%</span>表示任何字符出现任意次数<br><span class="hljs-keyword">select</span> id, name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> name <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%jet%&#x27;</span>;<br># 注意<span class="hljs-keyword">NULL</span>，<span class="hljs-operator">%</span>无法匹配值为<span class="hljs-keyword">NULL</span>的行<br><span class="hljs-keyword">select</span> name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> name <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;%&#x27;</span>;<br># _只匹配单个字符<br><span class="hljs-keyword">select</span> id, name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> name <span class="hljs-keyword">like</span> <span class="hljs-string">&#x27;_ton&#x27;</span>;<br></code></pre></td></tr></table></figure>
 
-<h4 id="带资源的try语句"><a href="#带资源的try语句" class="headerlink" title="带资源的try语句"></a>带资源的try语句</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">try</span> (<span class="hljs-type">Resource</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> ...) &#123;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<h5 id="正则表达式搜索"><a href="#正则表达式搜索" class="headerlink" title="正则表达式搜索"></a>正则表达式搜索</h5><p>使用like操作符时，如果不带通配符，则将匹配整个列的值，如果被匹配的文本只是列值的一部分，则不会返回行</p>
+<p>相反，使用regexp操作符时，可以匹配列值中的任意部分</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> name regexp <span class="hljs-string">&#x27;1000&#x27;</span>;<br># 进行<span class="hljs-keyword">OR</span>匹配<br><span class="hljs-keyword">select</span> name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> name regexp <span class="hljs-string">&#x27;1000|2000&#x27;</span>;<br># 匹配特定字符<br><span class="hljs-keyword">select</span> name <span class="hljs-keyword">from</span> products <span class="hljs-keyword">where</span> name regexp <span class="hljs-string">&#x27;[123]Tom&#x27;</span>;<br></code></pre></td></tr></table></figure>
 
-<p>在try块退出时，会自动调用res.close方法。还可以自定义实现AutoCloseable接口的类，来实现带资源的try语句，资源的关闭顺序是倒序的</p>
+<h5 id="创建计算字段"><a href="#创建计算字段" class="headerlink" title="创建计算字段"></a>创建计算字段</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"># 拼接多个列<br><span class="hljs-keyword">select</span> concat(name, <span class="hljs-string">&#x27;(&#x27;</span>, country, <span class="hljs-string">&#x27;)&#x27;</span>) <span class="hljs-keyword">from</span> products;<br># 执行算术计算 (<span class="hljs-operator">+</span>、<span class="hljs-operator">-</span>、<span class="hljs-operator">*</span>、<span class="hljs-operator">/</span>)<br><span class="hljs-keyword">select</span> id, quantity<span class="hljs-operator">*</span>price <span class="hljs-keyword">as</span> expanded_price <span class="hljs-keyword">from</span> orders;<br># 测试计算 (省略<span class="hljs-keyword">from</span>子句)<br><span class="hljs-keyword">select</span> now();<br></code></pre></td></tr></table></figure>
+
+<h5 id="数据处理函数"><a href="#数据处理函数" class="headerlink" title="数据处理函数"></a>数据处理函数</h5><h6 id="文本处理函数"><a href="#文本处理函数" class="headerlink" title="文本处理函数"></a>文本处理函数</h6><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Left(expression, length)</td>
+<td align="center">返回串左边的字符</td>
+</tr>
+<tr>
+<td align="center">Length()</td>
+<td align="center">返回串的长度</td>
+</tr>
+<tr>
+<td align="center">Locate(substr, str, start)</td>
+<td align="center">返回字串的位置(从1开始算)</td>
+</tr>
+<tr>
+<td align="center">Lower()、Upper()</td>
+<td align="center">将串转为小写或大写</td>
+</tr>
+<tr>
+<td align="center">LTrim()、RTrim()、Trim()</td>
+<td align="center">去除串左右空格</td>
+</tr>
+<tr>
+<td align="center">Right(expression, length)</td>
+<td align="center">返回串右边的字符</td>
+</tr>
+<tr>
+<td align="center">Soundex()</td>
+<td align="center">返回串的SOUNDEX值(进行发音比较)</td>
+</tr>
+<tr>
+<td align="center">SubString(str, start, length)</td>
+<td align="center">返回子串(start从1开始)</td>
+</tr>
+</tbody></table>
+<h6 id="日期处理函数"><a href="#日期处理函数" class="headerlink" title="日期处理函数"></a>日期处理函数</h6><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">AddDate(date, interval expr unit)</td>
+<td align="center">增加一个日期</td>
+</tr>
+<tr>
+<td align="center">CurDate()、CurTime()</td>
+<td align="center">返回当前日期或时间</td>
+</tr>
+<tr>
+<td align="center">Date()</td>
+<td align="center">返回日期时间的日期部分</td>
+</tr>
+<tr>
+<td align="center">Date_Format(date, pattern)</td>
+<td align="center">返回一个格式化的日期或时间串</td>
+</tr>
+<tr>
+<td align="center">Day()、Year()、Month()</td>
+<td align="center">返回日期的部分</td>
+</tr>
+<tr>
+<td align="center">Now()</td>
+<td align="center">返回当前日期和时间</td>
+</tr>
+<tr>
+<td align="center">DateDiff(expr1, expr2)</td>
+<td align="center">计算两个日期之差</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sql"># use adddate<br><span class="hljs-keyword">select</span> adddate(orderdate, <span class="hljs-type">interval</span> <span class="hljs-number">10</span> <span class="hljs-keyword">day</span>), orderdate <span class="hljs-keyword">from</span> orders;<br># use date_format<br><span class="hljs-keyword">select</span> date_format(orderdate, <span class="hljs-string">&#x27;%Y/%m/%d&#x27;</span>) <span class="hljs-keyword">from</span> orders;<br># use datediff 天数之差<br><span class="hljs-keyword">select</span> datediff(<span class="hljs-string">&#x27;2017/08/25&#x27;</span>, <span class="hljs-string">&#x27;2017/08/20&#x27;</span>); <br></code></pre></td></tr></table></figure>
+
+<h6 id="数值处理函数"><a href="#数值处理函数" class="headerlink" title="数值处理函数"></a>数值处理函数</h6><table>
+<thead>
+<tr>
+<th align="center">函数</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Abs()</td>
+<td align="center">返回绝对值</td>
+</tr>
+<tr>
+<td align="center">Cos()、Sin()、Tan()</td>
+<td align="center">返回角度的余弦、正弦、正切</td>
+</tr>
+<tr>
+<td align="center">Exp()</td>
+<td align="center">返回数的指数值</td>
+</tr>
+<tr>
+<td align="center">Mod(num1, num2)</td>
+<td align="center">返回除操作的余数</td>
+</tr>
+<tr>
+<td align="center">Pi()</td>
+<td align="center">返回圆周率</td>
+</tr>
+<tr>
+<td align="center">Rand()</td>
+<td align="center">返回随机数</td>
+</tr>
+<tr>
+<td align="center">Sqrt()</td>
+<td align="center">返回数的平方根</td>
+</tr>
+<tr>
+<td align="center">Round()</td>
+<td align="center">四舍五入</td>
+</tr>
+</tbody></table>
 
                 
               </div>
@@ -324,7 +436,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF/" class="category-chain-item">Java核心技术</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
   
 
@@ -339,7 +451,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Java/">#Java</a>
+        <a href="/tags/MySQL/">#MySQL</a>
       
     </div>
   
@@ -351,8 +463,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>异常、断言和日志</div>
-      <div>http://xrcol.github.io/2023/03/19/69efd1704bf5/</div>
+      <div>MYSQL必知必会</div>
+      <div>http://xrcol.github.io/2024/04/05/78e8979df787/</div>
     </div>
     <div class="license-meta">
       
@@ -364,7 +476,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年3月19日</div>
+          <div>2024年4月5日</div>
         </div>
       
       
@@ -396,9 +508,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/03/26/9cadd44316d9/" title="泛型程序设计">
+                      <a href="/2024/04/05/c6862216cec8/" title="MYSQL必知必会">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">泛型程序设计</span>
+                        <span class="hidden-mobile">MYSQL必知必会</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -406,8 +518,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/03/18/49da83869ffd/" title="接口、lambda表达式和内部类">
-                        <span class="hidden-mobile">接口、lambda表达式和内部类</span>
+                      <a href="/2024/03/06/503d4638e5c2/" title="并查集">
+                        <span class="hidden-mobile">并查集</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -465,19 +577,6 @@
 
   
 
-
-
-  <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
-    mermaid.initialize({"theme":"default"});
-
-    Fluid.events.registerRefreshCallback(function() {
-      if ('mermaid' in window) {
-        mermaid.init();
-      }
-    });
-  });
-</script>
 
 
 
